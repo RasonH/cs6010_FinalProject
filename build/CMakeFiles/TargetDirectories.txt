@@ -1,0 +1,3 @@
+/Users/lydiayuan/cs6010_FinalProject/build/CMakeFiles/finalProject.dir
+/Users/lydiayuan/cs6010_FinalProject/build/CMakeFiles/edit_cache.dir
+/Users/lydiayuan/cs6010_FinalProject/build/CMakeFiles/rebuild_cache.dir

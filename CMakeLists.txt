@@ -1,0 +1,13 @@
+
+
+cmake_minimum_required(VERSION 3.15)
+
+project(finalProject)
+
+add_executable(finalProject src/main.cpp)
+
+find_package(SFML 2.5 COMPONENTS graphics REQUIRED)
+
+target_link_libraries(finalProject sfml-graphics)
+
+target_compile_options(finalProject PUBLIC -std=c++17)
