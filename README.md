@@ -15,6 +15,7 @@ open finalProject.xcodeproj
 
 ### For VS Code dev
 ```shell
+mkdir build
 cd build
 cmake ..
 make
