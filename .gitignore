@@ -33,3 +33,6 @@
 
 ## obnoxious file that has thumbnails and stuff
 .DS_Store
+
+## tons of generated file in build folder
+build/
