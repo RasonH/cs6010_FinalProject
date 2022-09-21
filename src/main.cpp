@@ -45,7 +45,9 @@ int main()
         if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
         {
             std::cout << "click" << endl;
-            handleClickCell(window, grid, sideLength, windowWidth, windowHeight);
+//            if(isValidClick(sf::Mouse::getPosition(window), windowWidth, windowHeight)){
+            handleClickCell(window, grid, sideLength, windowWidth, windowHeight, colSize, rowSize);
+//            }
         }
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
@@ -65,27 +67,8 @@ int main()
             std::cout << "Pause / Restart the cell iteration" << std::endl;
             grid.toggleIsPaused();
         }
-        
-        //restricting mouse inside the window -- found name not comparing with direction (col and row should be switched -- currently by switching them in the constants)
-        //problem unsolved - mouse set to bottom when y < 0;
-        sf::Vector2i mousePosRelative = sf::Mouse::getPosition(window);
-        
-        if (mousePosRelative.x < 0)
-        {
-            sf::Mouse::setPosition(sf::Vector2i(0, mousePosRelative.y), window);
-        }
-        else if (mousePosRelative.x > windowWidth)
-        {
-            sf::Mouse::setPosition(sf::Vector2i(windowWidth, mousePosRelative.y), window);
-        }
-        else if (mousePosRelative.y > windowHeight)
-        {
-            sf::Mouse::setPosition(sf::Vector2i(mousePosRelative.x, windowHeight), window);
-        }
-        else if (mousePosRelative.y < 15)
-        {
-            sf::Mouse::setPosition(sf::Vector2i(mousePosRelative.x, 10), window);
-        }
+
+        window.setMouseCursorGrabbed(true);
         
         
         window.display();
