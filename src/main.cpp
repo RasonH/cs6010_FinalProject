@@ -39,7 +39,7 @@ int main()
         }
 
         window.clear(sf::Color::Black);
-
+        
         setupGrid(window, sideLength, grid);
 
         if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
@@ -59,13 +59,18 @@ int main()
             std::cout << "shuffle the cell states" << std::endl;
             shuffleCellStates(grid);
         }
-
+        
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::P))
         {
             std::cout << "Pause / Restart the cell iteration" << std::endl;
             grid.toggleIsPaused();
         }
-
+        
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
+        {
+            std::cout << "Quit the program" << std::endl;
+            break;
+        }
         window.setMouseCursorGrabbed(true);
         
         
