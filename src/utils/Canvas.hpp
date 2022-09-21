@@ -12,8 +12,8 @@ void setupGrid(sf::RenderWindow &window, const unsigned int sideLength, Grid &gr
 void drawCell(sf::RenderWindow &window, const unsigned int sideLength, Cell &cell);
 bool isValidClick(const sf::Vector2i &position, const unsigned int windowWidth, const unsigned int windowHeight);
 sf::Vector2i computeIndexPosition(const sf::Vector2i &position, const unsigned int sideLength);
-bool isValidIndexPostion(const sf::Vector2i &position);
-void handleClickCell(sf::RenderWindow &window, Grid &grid, const unsigned int sideLength, const unsigned int windowWidth, const unsigned int windowHeight);
+bool isValidIndexPostion(const sf::Vector2i &position, const int& colSize, const int& rowSize);
+void handleClickCell(sf::RenderWindow &window, Grid &grid, const unsigned int sideLength, const unsigned int windowWidth, const unsigned int windowHeight, const int colSize, const int rowSize);
 
 void resetTheGrid(Grid &grid)
 {
@@ -69,11 +69,11 @@ void drawCell(sf::RenderWindow &window, const unsigned int sideLength, Cell &cel
 
 bool isValidClick(const sf::Vector2i &position, const unsigned int windowWidth, const unsigned int windowHeight)
 {
-    return 0 <= position.x && position.x <= windowWidth && 0 <= position.y && position.y <= windowHeight;
+    return 0 <= position.x && position.x <= windowWidth + 100 && 0 <= position.y && position.y <= windowHeight + 100;
 }
 
 sf::Vector2i computeIndexPosition(const sf::Vector2i &position, const unsigned int sideLength)
-{//to do: need to modify
+{
     int rowIndex = (position.y / sideLength) - 1;
     bool isValidRow = (rowIndex + 1) * sideLength <= position.y && position.y <= (rowIndex + 2) * sideLength;
     int colIndex = (position.x / sideLength) - 1;
@@ -81,24 +81,24 @@ sf::Vector2i computeIndexPosition(const sf::Vector2i &position, const unsigned i
     sf::Vector2i indexPosition(-1, -1);
     if (isValidRow && isValidCol)
     {
-        indexPosition.x = rowIndex;
-        indexPosition.y = colIndex;
+        indexPosition.x = colIndex;
+        indexPosition.y = rowIndex;
     }
     return indexPosition;
 }
 
-bool isValidIndexPostion(const sf::Vector2i &position)
+bool isValidIndexPostion(const sf::Vector2i &position, const int& colSize, const int& rowSize)
 {
-    return position.x != -1 && position.y != -1;
+    return position.x >= 0 && position.y >= 0 && position.x <= colSize && position.y <= rowSize ;
 }
 
-void handleClickCell(sf::RenderWindow &window, Grid &grid, const unsigned int sideLength, const unsigned int windowWidth, const unsigned int windowHeight)
+void handleClickCell(sf::RenderWindow &window, Grid &grid, const unsigned int sideLength, const unsigned int windowWidth, const unsigned int windowHeight, const int colSize, const int rowSize)
 {
     sf::Vector2i clickPosition = sf::Mouse::getPosition(window);
     if (isValidClick(clickPosition, windowWidth, windowHeight))
     {
         sf::Vector2i indexPosition = computeIndexPosition(clickPosition, sideLength);
-        if (isValidIndexPostion(indexPosition))
+        if (isValidIndexPostion(indexPosition, colSize - 1, rowSize - 1))
         {
             std::cout << "handle valid cell click" << std::endl;
             grid.toggleCellState(indexPosition.x, indexPosition.y);

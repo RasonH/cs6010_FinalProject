@@ -13,7 +13,7 @@ int main()
 {
     srand(time(nullptr));
 
-    Grid grid(rowSize, colSize);
+    Grid grid(colSize, rowSize);
 
     shuffleCellStates(grid);
 
@@ -45,7 +45,7 @@ int main()
         if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
         {
             std::cout << "click" << endl;
-            handleClickCell(window, grid, sideLength, windowWidth, windowHeight);
+            handleClickCell(window, grid, sideLength, windowWidth, windowHeight, colSize, rowSize);
         }
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
@@ -66,6 +66,9 @@ int main()
             grid.toggleIsPaused();
         }
 
+        window.setMouseCursorGrabbed(true);
+        
+        
         window.display();
     }
 
