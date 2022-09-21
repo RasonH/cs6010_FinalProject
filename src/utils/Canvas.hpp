@@ -8,12 +8,12 @@
 void resetTheGrid(Grid &Grid);
 State computeRandomState();
 void shuffleCellStates(Grid &grid);
-void setupGrid(sf::RenderWindow &window, const unsigned int radius, Grid &grid);
-void drawCell(sf::RenderWindow &window, const unsigned int radius, Cell &cell);
+void setupGrid(sf::RenderWindow &window, const unsigned int sideLength, Grid &grid);
+void drawCell(sf::RenderWindow &window, const unsigned int sideLength, Cell &cell);
 bool isValidClick(const sf::Vector2i &position, const unsigned int windowWidth, const unsigned int windowHeight);
-sf::Vector2i computeIndexPosition(const sf::Vector2i &position, const unsigned int radius);
+sf::Vector2i computeIndexPosition(const sf::Vector2i &position, const unsigned int sideLength);
 bool isValidIndexPostion(const sf::Vector2i &position);
-void handleClickCell(sf::RenderWindow &window, Grid &grid, const unsigned int radius, const unsigned int windowWidth, const unsigned int windowHeight);
+void handleClickCell(sf::RenderWindow &window, Grid &grid, const unsigned int sideLength, const unsigned int windowWidth, const unsigned int windowHeight);
 
 void resetTheGrid(Grid &grid)
 {
@@ -42,23 +42,23 @@ void shuffleCellStates(Grid &grid)
     }
 }
 
-void setupGrid(sf::RenderWindow &window, const unsigned int radius, Grid &grid)
+void setupGrid(sf::RenderWindow &window, const unsigned int sideLength, Grid &grid)
 {
     for (unsigned int row = 0; row < grid.getRowSize(); row++)
     {
         for (unsigned int col = 0; col < grid.getColSize(); col++)
         {
-            drawCell(window, radius, grid.getCell(row, col));
+            drawCell(window, sideLength, grid.getCell(row, col));
         }
     }
 }
 
-void drawCell(sf::RenderWindow &window, const unsigned int radius, Cell &cell)
+void drawCell(sf::RenderWindow &window, const unsigned int sideLength, Cell &cell)
 {
-    sf::CircleShape shape(radius);
+    sf::RectangleShape shape(sf::Vector2f(sideLength * 0.95, sideLength * 0.95));
     sf::Vector2u position = cell.getPosition();
-    int rowPos = radius * (3 * position.x + 2);
-    int colPos = radius * (3 * position.y + 2);
+    int rowPos = sideLength * (position.x + 1); //real position - upleft corner
+    int colPos = sideLength * (position.y + 1);
 
     shape.setPosition(rowPos, colPos);
 
@@ -72,12 +72,12 @@ bool isValidClick(const sf::Vector2i &position, const unsigned int windowWidth, 
     return 0 <= position.x && position.x <= windowWidth && 0 <= position.y && position.y <= windowHeight;
 }
 
-sf::Vector2i computeIndexPosition(const sf::Vector2i &position, const unsigned int radius)
-{
-    int rowIndex = ((position.y / radius) - 1) / 3;
-    bool isValidRow = (rowIndex * 3 + 1) * radius <= position.y && position.y <= (rowIndex * 3 + 3) * radius;
-    int colIndex = ((position.x / radius) - 1) / 3;
-    bool isValidCol = (colIndex * 3 + 1) * radius <= position.x && position.x <= (colIndex * 3 + 3) * radius;
+sf::Vector2i computeIndexPosition(const sf::Vector2i &position, const unsigned int sideLength)
+{//to do: need to modify
+    int rowIndex = (position.y / sideLength) - 1;
+    bool isValidRow = (rowIndex + 1) * sideLength <= position.y && position.y <= (rowIndex + 2) * sideLength;
+    int colIndex = (position.x / sideLength) - 1;
+    bool isValidCol = (colIndex + 1) * sideLength <= position.x && position.x <= (colIndex + 2) * sideLength;
     sf::Vector2i indexPosition(-1, -1);
     if (isValidRow && isValidCol)
     {
@@ -92,12 +92,12 @@ bool isValidIndexPostion(const sf::Vector2i &position)
     return position.x != -1 && position.y != -1;
 }
 
-void handleClickCell(sf::RenderWindow &window, Grid &grid, const unsigned int radius, const unsigned int windowWidth, const unsigned int windowHeight)
+void handleClickCell(sf::RenderWindow &window, Grid &grid, const unsigned int sideLength, const unsigned int windowWidth, const unsigned int windowHeight)
 {
     sf::Vector2i clickPosition = sf::Mouse::getPosition(window);
     if (isValidClick(clickPosition, windowWidth, windowHeight))
     {
-        sf::Vector2i indexPosition = computeIndexPosition(clickPosition, radius);
+        sf::Vector2i indexPosition = computeIndexPosition(clickPosition, sideLength);
         if (isValidIndexPostion(indexPosition))
         {
             std::cout << "handle valid cell click" << std::endl;
