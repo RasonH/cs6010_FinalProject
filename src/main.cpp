@@ -13,7 +13,7 @@ int main()
 {
     srand(time(nullptr));
 
-    Grid grid(rowSize, colSize);
+    Grid grid(colSize, rowSize);
 
     shuffleCellStates(grid);
 
@@ -82,7 +82,8 @@ int main()
         {
             sf::Mouse::setPosition(sf::Vector2i(mousePosRelative.x, windowHeight), window);
         }
-        else if (mousePosRelative.y < 15){
+        else if (mousePosRelative.y < 15)
+        {
             sf::Mouse::setPosition(sf::Vector2i(mousePosRelative.x, 10), window);
         }
         

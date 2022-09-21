@@ -81,8 +81,8 @@ sf::Vector2i computeIndexPosition(const sf::Vector2i &position, const unsigned i
     sf::Vector2i indexPosition(-1, -1);
     if (isValidRow && isValidCol)
     {
-        indexPosition.x = rowIndex;
-        indexPosition.y = colIndex;
+        indexPosition.x = colIndex;
+        indexPosition.y = rowIndex;
     }
     return indexPosition;
 }
@@ -92,6 +92,7 @@ bool isValidIndexPostion(const sf::Vector2i &position)
     return position.x != -1 && position.y != -1;
 }
 
+//need to modify to allow click outside the window and do not exit (or maybe find a new solution that can handle mouse position)
 void handleClickCell(sf::RenderWindow &window, Grid &grid, const unsigned int sideLength, const unsigned int windowWidth, const unsigned int windowHeight)
 {
     sf::Vector2i clickPosition = sf::Mouse::getPosition(window);
@@ -101,7 +102,7 @@ void handleClickCell(sf::RenderWindow &window, Grid &grid, const unsigned int si
         if (isValidIndexPostion(indexPosition))
         {
             std::cout << "handle valid cell click" << std::endl;
-            grid.toggleCellState(indexPosition.y, indexPosition.x); //when debugging, found out it was reversed
+            grid.toggleCellState(indexPosition.x, indexPosition.y);
         }
     }
 }
