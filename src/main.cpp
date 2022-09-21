@@ -65,7 +65,26 @@ int main()
             std::cout << "Pause / Restart the cell iteration" << std::endl;
             grid.toggleIsPaused();
         }
-
+        
+        //restricting mouse inside the window -- found name not comparing with direction (col and row should be switched -- currently by switching them in the constants)
+        sf::Vector2i mousePosRelative = sf::Mouse::getPosition(window);
+        
+        if (mousePosRelative.x <= 0 && mousePosRelative.y >= 0)
+        {
+            sf::Mouse::setPosition(sf::Vector2i(0, mousePosRelative.y), window);
+        }
+        
+        if (mousePosRelative.x >= windowWidth && mousePosRelative.y >= 0)
+        {
+            sf::Mouse::setPosition(sf::Vector2i(windowWidth, mousePosRelative.y), window);
+        }
+        
+        if (mousePosRelative.y >= windowHeight)
+        {
+            sf::Mouse::setPosition(sf::Vector2i(mousePosRelative.x, windowHeight), window);
+        }
+        
+        
         window.display();
     }
 

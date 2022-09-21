@@ -101,7 +101,7 @@ void handleClickCell(sf::RenderWindow &window, Grid &grid, const unsigned int si
         if (isValidIndexPostion(indexPosition))
         {
             std::cout << "handle valid cell click" << std::endl;
-            grid.toggleCellState(indexPosition.x, indexPosition.y);
+            grid.toggleCellState(indexPosition.y, indexPosition.x); //when debugging, found out it was reversed
         }
     }
 }
