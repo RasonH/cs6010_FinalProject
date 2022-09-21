@@ -5,7 +5,7 @@
 #include "../components/Cell.hpp"
 #include "../components/Grid.hpp"
 
-
+void resetTheGrid(Grid &Grid);
 State computeRandomState();
 void shuffleCellStates(Grid &grid);
 void setupGrid(sf::RenderWindow &window, const unsigned int radius, Grid &grid);
@@ -14,6 +14,17 @@ bool isValidClick(const sf::Vector2i &position, const unsigned int windowWidth, 
 sf::Vector2i computeIndexPosition(const sf::Vector2i &position, const unsigned int radius);
 bool isValidIndexPostion(const sf::Vector2i &position);
 void handleClickCell(sf::RenderWindow &window, Grid &grid, const unsigned int radius, const unsigned int windowWidth, const unsigned int windowHeight);
+
+void resetTheGrid(Grid &grid)
+{
+    for (int row = 0; row < grid.getRowSize(); row++)
+    {
+        for (int col = 0; col < grid.getColSize(); col++)
+        {
+            grid.setCellState(row, col, dead);
+        }
+    }
+}
 
 State computeRandomState()
 {
@@ -91,7 +102,6 @@ void handleClickCell(sf::RenderWindow &window, Grid &grid, const unsigned int ra
         {
             std::cout << "handle valid cell click" << std::endl;
             grid.toggleCellState(indexPosition.x, indexPosition.y);
-            grid.computeNextIteration();
         }
     }
 }

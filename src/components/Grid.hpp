@@ -9,6 +9,7 @@ private:
     unsigned int rowSize_;
     unsigned int colSize_;
     std::vector<std::vector<Cell>> cells_;
+    bool isPaused_;
 
 public:
     Grid();
@@ -17,6 +18,7 @@ public:
     Grid(const Grid &original);
     Grid &operator=(const Grid &original);
 
+    void toggleIsPaused();
     void computeNextIteration();
     void computeCellState(unsigned int row, unsigned int col);
     void computeCellFinalState(unsigned int row, unsigned int col);
@@ -35,12 +37,14 @@ Grid::Grid()
     rowSize_ = 0;
     colSize_ = 0;
     cells_ = {{}};
+    isPaused_ = false;
 }
 
 Grid::Grid(unsigned int rows, unsigned int cols)
 {
     rowSize_ = rows;
     colSize_ = cols;
+    isPaused_ = false;
     for (unsigned int row = 0; row < rowSize_; row++)
     {
         cells_.push_back({});
@@ -55,6 +59,7 @@ Grid::Grid(const std::vector<std::vector<State>> &states)
 {
     rowSize_ = states.size();
     colSize_ = states.back().size();
+    isPaused_ = false;
     for (unsigned int row = 0; row < rowSize_; row++)
     {
         for (unsigned int col = 0; col < colSize_; col++)
@@ -72,6 +77,7 @@ Grid::Grid(const Grid &original)
     }
     rowSize_ = original.rowSize_;
     colSize_ = original.colSize_;
+    isPaused_ = false;
     for (int row = 0; row < rowSize_; row++)
     {
         for (int col = 0; col < colSize_; col++)
@@ -79,6 +85,11 @@ Grid::Grid(const Grid &original)
             cells_[row][col] = original.cells_[row][col];
         }
     }
+}
+
+void Grid::toggleIsPaused()
+{
+    isPaused_ = !isPaused_;
 }
 
 Grid &Grid::operator=(const Grid &original)
@@ -89,6 +100,7 @@ Grid &Grid::operator=(const Grid &original)
     }
     rowSize_ = original.rowSize_;
     colSize_ = original.colSize_;
+    isPaused_ = original.isPaused_;
     for (int row = 0; row < rowSize_; row++)
     {
         for (int col = 0; col < colSize_; col++)
@@ -164,6 +176,10 @@ void Grid::computeCellFinalState(unsigned int row, unsigned int col)
 
 void Grid::computeNextIteration()
 {
+    if (isPaused_)
+    {
+        return;
+    }
     for (unsigned row = 0; row < rowSize_; row++)
     {
         for (unsigned col = 0; col < colSize_; col++)
@@ -179,8 +195,6 @@ void Grid::computeNextIteration()
             computeCellFinalState(row, col);
         }
     }
-
-    std::cout << "compute next iteration" << std::endl;
 }
 
 Cell &Grid::getCell(unsigned int row, unsigned int col)
