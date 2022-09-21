@@ -36,4 +36,4 @@
 
 ## tons of generated file in build folder
 build/
-**/xcode/
+*/xcode/
