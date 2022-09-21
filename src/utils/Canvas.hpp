@@ -73,7 +73,7 @@ bool isValidClick(const sf::Vector2i &position, const unsigned int windowWidth, 
 }
 
 sf::Vector2i computeIndexPosition(const sf::Vector2i &position, const unsigned int sideLength)
-{//to do: need to modify
+{
     int rowIndex = (position.y / sideLength) - 1;
     bool isValidRow = (rowIndex + 1) * sideLength <= position.y && position.y <= (rowIndex + 2) * sideLength;
     int colIndex = (position.x / sideLength) - 1;
@@ -89,11 +89,9 @@ sf::Vector2i computeIndexPosition(const sf::Vector2i &position, const unsigned i
 
 bool isValidIndexPostion(const sf::Vector2i &position, const int& colSize, const int& rowSize)
 {
-    
     return position.x >= 0 && position.y >= 0 && position.x <= colSize && position.y <= rowSize ;
 }
 
-//need to modify to allow click outside the window and do not exit (or maybe find a new solution that can handle mouse position)
 void handleClickCell(sf::RenderWindow &window, Grid &grid, const unsigned int sideLength, const unsigned int windowWidth, const unsigned int windowHeight, const int colSize, const int rowSize)
 {
     sf::Vector2i clickPosition = sf::Mouse::getPosition(window);

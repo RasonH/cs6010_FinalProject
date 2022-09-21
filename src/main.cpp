@@ -45,9 +45,7 @@ int main()
         if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
         {
             std::cout << "click" << endl;
-//            if(isValidClick(sf::Mouse::getPosition(window), windowWidth, windowHeight)){
             handleClickCell(window, grid, sideLength, windowWidth, windowHeight, colSize, rowSize);
-//            }
         }
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
