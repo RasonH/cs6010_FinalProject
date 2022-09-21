@@ -17,7 +17,7 @@ public:
     Grid(const std::vector<std::vector<State>> &states);
     Grid(const Grid &original);
     Grid &operator=(const Grid &original);
-
+    
     void toggleIsPaused();
     void computeNextIteration();
     void computeCellState(unsigned int row, unsigned int col);

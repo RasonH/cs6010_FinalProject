@@ -1,6 +1,6 @@
 #pragma once
 
-const unsigned int frameRateLimit = 50;
+const unsigned int frameRateLimit = 70;
 
 const unsigned int sideLength = 10;
 
