@@ -40,12 +40,12 @@ int main()
 
         window.clear(sf::Color::Black);
 
-        setupGrid(window, radius, grid);
+        setupGrid(window, sideLength, grid);
 
         if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
         {
             std::cout << "click" << endl;
-            handleClickCell(window, grid, radius, windowWidth, windowHeight);
+            handleClickCell(window, grid, sideLength, windowWidth, windowHeight);
         }
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
