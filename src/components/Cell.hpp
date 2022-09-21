@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include <map>
+#include <set>
 
 enum State
 {
@@ -10,6 +10,14 @@ enum State
     nextIterationLive = 2,
     nextIterationDead = -1
 };
+
+const std::set<State> currentlyDeadStates = {dead, nextIterationLive};
+
+const std::set<State> currentlyLiveStates = {live, nextIterationDead};
+
+const sf::Color currentlyLiveColor = sf::Color::Blue;
+
+const sf::Color currentlyDeadColor = sf::Color::White;
 
 class Cell
 {
@@ -63,18 +71,18 @@ void Cell::setState(State newState)
 void Cell::printCellInfo()
 {
     std::cout << "Position: " << position_.x << " , " << position_.y << std::endl;
-    std::cout << "State: " << (state_ ? 'live' : 'dead') << std::endl
+    std::cout << "State: " << (isCurrentlyLive() ? "currently live" : "currently dead") << std::endl
               << std::endl;
 }
 
 bool Cell::isCurrentlyDead()
 {
-    return state_ == dead || state_ == nextIterationLive;
+    return currentlyDeadStates.find(state_) != currentlyDeadStates.end();
 }
 
 bool Cell::isCurrentlyLive()
 {
-    return state_ == live || state_ == nextIterationDead;
+    return currentlyLiveStates.find(state_) != currentlyLiveStates.end();
 }
 
 void Cell::toggleState()
@@ -93,10 +101,10 @@ sf::Color Cell::getColorByState()
 {
     if (isCurrentlyLive())
     {
-        return sf::Color::Blue;
+        return currentlyLiveColor;
     }
     else
     {
-        return sf::Color::White;
+        return currentlyDeadColor;
     }
 }
