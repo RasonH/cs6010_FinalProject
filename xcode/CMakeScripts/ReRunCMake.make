@@ -5,10 +5,10 @@ empty:=
 space:= $(empty) $(empty)
 spaceplus:= $(empty)\ $(empty)
 
-TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/lydiayuan/cs6010_FinalProject/CMakeLists.txt))
-TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/lydiayuan/cs6010_FinalProject/xcode/CMakeFiles/3.24.2/CMakeCCompiler.cmake))
-TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/lydiayuan/cs6010_FinalProject/xcode/CMakeFiles/3.24.2/CMakeCXXCompiler.cmake))
-TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/lydiayuan/cs6010_FinalProject/xcode/CMakeFiles/3.24.2/CMakeSystem.cmake))
+TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/CMakeLists.txt))
+TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode/CMakeFiles/3.24.2/CMakeCCompiler.cmake))
+TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode/CMakeFiles/3.24.2/CMakeCXXCompiler.cmake))
+TARGETS += $(subst $(space),$(spaceplus),$(wildcard /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode/CMakeFiles/3.24.2/CMakeSystem.cmake))
 TARGETS += $(subst $(space),$(spaceplus),$(wildcard /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeCCompiler.cmake.in))
 TARGETS += $(subst $(space),$(spaceplus),$(wildcard /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeCCompilerABI.c))
 TARGETS += $(subst $(space),$(spaceplus),$(wildcard /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeCInformation.cmake))
@@ -109,5 +109,5 @@ TARGETS += $(subst $(space),$(spaceplus),$(wildcard /opt/homebrew/lib/cmake/SFML
 TARGETS += $(subst $(space),$(spaceplus),$(wildcard /opt/homebrew/lib/cmake/SFML/SFMLSharedTargets-release.cmake))
 TARGETS += $(subst $(space),$(spaceplus),$(wildcard /opt/homebrew/lib/cmake/SFML/SFMLSharedTargets.cmake))
 
-/Users/lydiayuan/cs6010_FinalProject/xcode/CMakeFiles/cmake.check_cache: $(TARGETS)
-	/opt/homebrew/Cellar/cmake/3.24.2/bin/cmake -H/Users/lydiayuan/cs6010_FinalProject -B/Users/lydiayuan/cs6010_FinalProject/xcode
+/Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode/CMakeFiles/cmake.check_cache: $(TARGETS)
+	/opt/homebrew/Cellar/cmake/3.24.2/bin/cmake -H/Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo -B/Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode

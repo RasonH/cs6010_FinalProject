@@ -1,3 +1,3 @@
-/Users/lydiayuan/cs6010_FinalProject/xcode/CMakeFiles/finalProject.dir
-/Users/lydiayuan/cs6010_FinalProject/xcode/CMakeFiles/ALL_BUILD.dir
-/Users/lydiayuan/cs6010_FinalProject/xcode/CMakeFiles/ZERO_CHECK.dir
+/Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode/CMakeFiles/finalProject.dir
+/Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode/CMakeFiles/ALL_BUILD.dir
+/Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode/CMakeFiles/ZERO_CHECK.dir

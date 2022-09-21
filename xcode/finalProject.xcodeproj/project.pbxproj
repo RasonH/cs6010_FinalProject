@@ -7,26 +7,26 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		5ABB150F4DDF4163A9935369 /* ZERO_CHECK */ = {
+		7ECF66741B134E3F877EF257 /* ZERO_CHECK */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = E60EDDB692914A11A5EFEAA6 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildConfigurationList = 8B1B7599E713404EB5DD6F53 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
 			buildPhases = (
-				3D8AEE03068E6B9F2D74DFAC /* Generate CMakeFiles/ZERO_CHECK */,
+				1359CCE9097E558863A824B2 /* Generate CMakeFiles/ZERO_CHECK */,
 			);
 			dependencies = (
 			);
 			name = ZERO_CHECK;
 			productName = ZERO_CHECK;
 		};
-		F208686D26CD4D8CBA496478 /* ALL_BUILD */ = {
+		E63C63AEAF314814A7DAE88A /* ALL_BUILD */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 81B59BF265A64753B8F9F3DF /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildConfigurationList = AE656BE85F2043148545FA74 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
 			buildPhases = (
-				F6FB6FA82E3D3CA8BE57A353 /* Generate CMakeFiles/ALL_BUILD */,
+				794D445CA1B96B36427E56F9 /* Generate CMakeFiles/ALL_BUILD */,
 			);
 			dependencies = (
-				5ECEF4E9FBBE46C69D1E1215 /* PBXTargetDependency */,
-				639037C7261243EB9B468C86 /* PBXTargetDependency */,
+				C880A266F3164ED8B342D42E /* PBXTargetDependency */,
+				A089427C2B6D4886BAC36027 /* PBXTargetDependency */,
 			);
 			name = ALL_BUILD;
 			productName = ALL_BUILD;
@@ -34,74 +34,84 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		584E3D5E8605466E894E3290 /* /Users/lydiayuan/cs6010_FinalProject/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 9A80FF4E8FE04C089D16C7D1 /* /Users/lydiayuan/cs6010_FinalProject/CMakeLists.txt */; };
-		59A3535D1EA042949708EFFC /* /Users/lydiayuan/cs6010_FinalProject/src/main.cpp */ = {isa = PBXBuildFile; fileRef = 4B7571BD9F09426D99D0C071 /* /Users/lydiayuan/cs6010_FinalProject/src/main.cpp */; };
+		12DEABAED1CD42A48B4C65C1 /* /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/src/utils/Frame.hpp */ = {isa = PBXBuildFile; fileRef = F48AA742615249B197D6F726 /* /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/src/utils/Frame.hpp */; };
+		477C50786E6548A2B316F129 /* /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/src/main.cpp */ = {isa = PBXBuildFile; fileRef = 2C53CDD374B4447D81E0E30C /* /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/src/main.cpp */; };
+		698C136CB45A4FAA965164DE /* /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/src/utils/Canvas.hpp */ = {isa = PBXBuildFile; fileRef = 1B24AE1647524997BA372862 /* /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/src/utils/Canvas.hpp */; };
+		8B3D0EBAAAA9405DB0E97BA3 /* /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/src/components/Cell.hpp */ = {isa = PBXBuildFile; fileRef = 4B86D69FAE4D47AC97F466AE /* /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/src/components/Cell.hpp */; };
+		936C7687146D4FD896C7B864 /* /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 76682969B88142AE8CA95A4E /* /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/CMakeLists.txt */; };
+		9FF4CAC4F8DF410FBA052CC2 /* /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/src/utils/Constants.hpp */ = {isa = PBXBuildFile; fileRef = FBCD6E4BCCF147DEBADA6270 /* /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/src/utils/Constants.hpp */; };
+		BA44CD126F4245ECAC391678 /* /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/src/components/Grid.hpp */ = {isa = PBXBuildFile; fileRef = AE154ABCCE244DAF9D504006 /* /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/src/components/Grid.hpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildStyle section */
-		3B23CF94E4954C9A86B7D6B2 /* RelWithDebInfo */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = RelWithDebInfo;
-		};
-		765D73F6795F42B091514441 /* Release */ = {
+		71E0705163D64B5EB1F223CD /* Release */ = {
 			isa = PBXBuildStyle;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 			};
 			name = Release;
 		};
-		B936780B8F5344F6A1C81131 /* Debug */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = Debug;
-		};
-		D6982B9C34E04389B63524D3 /* MinSizeRel */ = {
+		90FD5CF854C14EC3A181D959 /* MinSizeRel */ = {
 			isa = PBXBuildStyle;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 			};
 			name = MinSizeRel;
 		};
+		A341E945627D420297F14CBC /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		D9DFE4CCF60B48098BC5BC9D /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
 /* End PBXBuildStyle section */
 
 /* Begin PBXContainerItemProxy section */
-		14DDC66223364830B64E75CC /* PBXContainerItemProxy */ = {
+		0BBFC9E870AE4B44A446106F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F9D4006FC65243C8B20E5149 /* Project object */;
+			containerPortal = 274152F0D0F041078F2F1CBC /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 5ABB150F4DDF4163A9935369;
+			remoteGlobalIDString = 7ECF66741B134E3F877EF257;
 			remoteInfo = ZERO_CHECK;
 		};
-		949C0A7F447F491BB87078EB /* PBXContainerItemProxy */ = {
+		889188DDBDF642DFA915DC29 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F9D4006FC65243C8B20E5149 /* Project object */;
+			containerPortal = 274152F0D0F041078F2F1CBC /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C5805426E9E44C2DBE38C5E7;
+			remoteGlobalIDString = 7ECF66741B134E3F877EF257;
+			remoteInfo = ZERO_CHECK;
+		};
+		B24F6B2F64784BCDB5CA63DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 274152F0D0F041078F2F1CBC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F94EAD0BE104F4D9B1C2292;
 			remoteInfo = finalProject;
-		};
-		F1FB90304DB9449A9018F441 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F9D4006FC65243C8B20E5149 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5ABB150F4DDF4163A9935369;
-			remoteInfo = ZERO_CHECK;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4B7571BD9F09426D99D0C071 /* /Users/lydiayuan/cs6010_FinalProject/src/main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
-		72E72BB23F4B4AC78572E1A9 /* /Users/lydiayuan/cs6010_FinalProject/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		96F22C31BB7D47F69F473EDE /* finalProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = finalProject; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A80FF4E8FE04C089D16C7D1 /* /Users/lydiayuan/cs6010_FinalProject/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		1B24AE1647524997BA372862 /* /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/src/utils/Canvas.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Canvas.hpp; path = src/utils/Canvas.hpp; sourceTree = SOURCE_ROOT; };
+		2C53CDD374B4447D81E0E30C /* /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/src/main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
+		4B86D69FAE4D47AC97F466AE /* /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/src/components/Cell.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Cell.hpp; path = src/components/Cell.hpp; sourceTree = SOURCE_ROOT; };
+		76682969B88142AE8CA95A4E /* /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		AE154ABCCE244DAF9D504006 /* /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/src/components/Grid.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Grid.hpp; path = src/components/Grid.hpp; sourceTree = SOURCE_ROOT; };
+		B44A20F84B1940538DFEAE62 /* /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		C5F5DD24C72D437B856240AE /* finalProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = finalProject; sourceTree = BUILT_PRODUCTS_DIR; };
+		F48AA742615249B197D6F726 /* /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/src/utils/Frame.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Frame.hpp; path = src/utils/Frame.hpp; sourceTree = SOURCE_ROOT; };
+		FBCD6E4BCCF147DEBADA6270 /* /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/src/utils/Constants.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Constants.hpp; path = src/utils/Constants.hpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D1678D3E95B34B1794737D45 /* Frameworks */ = {
+		B91A131E59F143B0800728EB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -111,116 +121,162 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		46E245EBE4C54DAF9035A857 /* CMake Rules */ = {
+		0F6DC43FB9994DC7B77DC459 /* CMake Rules */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = "CMake Rules";
 			sourceTree = "<group>";
 		};
-		48097F7B146C4D2C909FA6C8 /* Frameworks */ = {
+		4B200A68ED68486780095CB1 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				0F6DC43FB9994DC7B77DC459 /* CMake Rules */,
+				B44A20F84B1940538DFEAE62 /* /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		4FA901D6E86146CC9A61D2D2 /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				4B86D69FAE4D47AC97F466AE /* /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/src/components/Cell.hpp */,
+				AE154ABCCE244DAF9D504006 /* /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/src/components/Grid.hpp */,
+				1B24AE1647524997BA372862 /* /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/src/utils/Canvas.hpp */,
+				FBCD6E4BCCF147DEBADA6270 /* /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/src/utils/Constants.hpp */,
+				F48AA742615249B197D6F726 /* /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/src/utils/Frame.hpp */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		653487FEE5A04914B65C9B7D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C5F5DD24C72D437B856240AE /* finalProject */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		71B8410BC91B4EF0953AF207 = {
+			isa = PBXGroup;
+			children = (
+				F490355BDDAB4552A9F767BB /* finalProject */,
+				4B200A68ED68486780095CB1 /* ALL_BUILD */,
+				653487FEE5A04914B65C9B7D /* Products */,
+				A7EB26EFAE1C48988B07DAFC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		74BDD3BD37334055ABB676C7 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				2C53CDD374B4447D81E0E30C /* /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/src/main.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		A7EB26EFAE1C48988B07DAFC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6E260E58F90F4F3CA7A2C9F2 /* Source Files */ = {
+		F490355BDDAB4552A9F767BB /* finalProject */ = {
 			isa = PBXGroup;
 			children = (
-				4B7571BD9F09426D99D0C071 /* /Users/lydiayuan/cs6010_FinalProject/src/main.cpp */,
-			);
-			name = "Source Files";
-			sourceTree = "<group>";
-		};
-		7C05102C5C0A4D9F943BFE5C /* finalProject */ = {
-			isa = PBXGroup;
-			children = (
-				6E260E58F90F4F3CA7A2C9F2 /* Source Files */,
-				9A80FF4E8FE04C089D16C7D1 /* /Users/lydiayuan/cs6010_FinalProject/CMakeLists.txt */,
+				74BDD3BD37334055ABB676C7 /* Source Files */,
+				4FA901D6E86146CC9A61D2D2 /* Header Files */,
+				76682969B88142AE8CA95A4E /* /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/CMakeLists.txt */,
 			);
 			name = finalProject;
-			sourceTree = "<group>";
-		};
-		8369482EC4F54A058E2AF8F5 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				96F22C31BB7D47F69F473EDE /* finalProject */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		872A0D79E3E148B98ABD45D9 = {
-			isa = PBXGroup;
-			children = (
-				7C05102C5C0A4D9F943BFE5C /* finalProject */,
-				FF69F954C12F4201A162D91C /* ALL_BUILD */,
-				8369482EC4F54A058E2AF8F5 /* Products */,
-				48097F7B146C4D2C909FA6C8 /* Frameworks */,
-			);
-			sourceTree = "<group>";
-		};
-		FF69F954C12F4201A162D91C /* ALL_BUILD */ = {
-			isa = PBXGroup;
-			children = (
-				46E245EBE4C54DAF9035A857 /* CMake Rules */,
-				72E72BB23F4B4AC78572E1A9 /* /Users/lydiayuan/cs6010_FinalProject/CMakeLists.txt */,
-			);
-			name = ALL_BUILD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C5805426E9E44C2DBE38C5E7 /* finalProject */ = {
+		2F94EAD0BE104F4D9B1C2292 /* finalProject */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2793B377D18842FEB4E2E34A /* Build configuration list for PBXNativeTarget "finalProject" */;
+			buildConfigurationList = FFB6824B1C874D98ACBEE938 /* Build configuration list for PBXNativeTarget "finalProject" */;
 			buildPhases = (
-				10A1F1668CC7497395E17E62 /* Sources */,
-				D1678D3E95B34B1794737D45 /* Frameworks */,
+				5B1C32C98693432B988779CB /* Sources */,
+				B91A131E59F143B0800728EB /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9EC58E51103440D086E5494A /* PBXTargetDependency */,
+				78743761DDCC4EC2ABA133E2 /* PBXTargetDependency */,
 			);
 			name = finalProject;
 			productName = finalProject;
-			productReference = 96F22C31BB7D47F69F473EDE /* finalProject */;
+			productReference = C5F5DD24C72D437B856240AE /* finalProject */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		F9D4006FC65243C8B20E5149 /* Project object */ = {
+		274152F0D0F041078F2F1CBC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1340;
 			};
-			buildConfigurationList = D5162B7841E046369EC9EF41 /* Build configuration list for PBXProject "finalProject" */;
+			buildConfigurationList = 92390B93C65C40B68F85708E /* Build configuration list for PBXProject "finalProject" */;
 			buildSettings = {
 			};
 			buildStyles = (
-				B936780B8F5344F6A1C81131 /* Debug */,
-				765D73F6795F42B091514441 /* Release */,
-				D6982B9C34E04389B63524D3 /* MinSizeRel */,
-				3B23CF94E4954C9A86B7D6B2 /* RelWithDebInfo */,
+				A341E945627D420297F14CBC /* Debug */,
+				71E0705163D64B5EB1F223CD /* Release */,
+				90FD5CF854C14EC3A181D959 /* MinSizeRel */,
+				D9DFE4CCF60B48098BC5BC9D /* RelWithDebInfo */,
 			);
 			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 0;
-			mainGroup = 872A0D79E3E148B98ABD45D9;
-			projectDirPath = /Users/lydiayuan/cs6010_FinalProject;
+			mainGroup = 71B8410BC91B4EF0953AF207;
+			projectDirPath = /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo;
 			projectRoot = "";
 			targets = (
-				F208686D26CD4D8CBA496478 /* ALL_BUILD */,
-				5ABB150F4DDF4163A9935369 /* ZERO_CHECK */,
-				C5805426E9E44C2DBE38C5E7 /* finalProject */,
+				E63C63AEAF314814A7DAE88A /* ALL_BUILD */,
+				7ECF66741B134E3F877EF257 /* ZERO_CHECK */,
+				2F94EAD0BE104F4D9B1C2292 /* finalProject */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1359CCE9097E558863A824B2 /* Generate CMakeFiles/ZERO_CHECK */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ZERO_CHECK";
+			outputPaths = (
+/Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode/CMakeFiles/ZERO_CHECK			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode
+  make -f /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode
+  make -f /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode
+  make -f /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode
+  make -f /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode/CMakeScripts/ReRunCMake.make
+fi
+";
+			showEnvVarsInLog = 0;
+		};
 		3C0110FC8322DE7E50886E21 = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -236,7 +292,7 @@
 exit 0";
 			showEnvVarsInLog = 0;
 		};
-		3D8AEE03068E6B9F2D74DFAC /* Generate CMakeFiles/ZERO_CHECK */ = {
+		794D445CA1B96B36427E56F9 /* Generate CMakeFiles/ALL_BUILD */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -244,27 +300,27 @@ exit 0";
 			);
 			inputPaths = (
 			);
-			name = "Generate CMakeFiles/ZERO_CHECK";
+			name = "Generate CMakeFiles/ALL_BUILD";
 			outputPaths = (
-/Users/lydiayuan/cs6010_FinalProject/xcode/CMakeFiles/ZERO_CHECK			);
+/Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode/CMakeFiles/ALL_BUILD			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "set -e
 if test \"$CONFIGURATION\" = \"Debug\"; then :
-  cd /Users/lydiayuan/cs6010_FinalProject/xcode
-  make -f /Users/lydiayuan/cs6010_FinalProject/xcode/CMakeScripts/ReRunCMake.make
+  cd /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode
+  echo Build\\ all\\ projects
 fi
 if test \"$CONFIGURATION\" = \"Release\"; then :
-  cd /Users/lydiayuan/cs6010_FinalProject/xcode
-  make -f /Users/lydiayuan/cs6010_FinalProject/xcode/CMakeScripts/ReRunCMake.make
+  cd /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode
+  echo Build\\ all\\ projects
 fi
 if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
-  cd /Users/lydiayuan/cs6010_FinalProject/xcode
-  make -f /Users/lydiayuan/cs6010_FinalProject/xcode/CMakeScripts/ReRunCMake.make
+  cd /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode
+  echo Build\\ all\\ projects
 fi
 if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
-  cd /Users/lydiayuan/cs6010_FinalProject/xcode
-  make -f /Users/lydiayuan/cs6010_FinalProject/xcode/CMakeScripts/ReRunCMake.make
+  cd /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode
+  echo Build\\ all\\ projects
 fi
 ";
 			showEnvVarsInLog = 0;
@@ -284,72 +340,39 @@ fi
 exit 0";
 			showEnvVarsInLog = 0;
 		};
-		F6FB6FA82E3D3CA8BE57A353 /* Generate CMakeFiles/ALL_BUILD */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Generate CMakeFiles/ALL_BUILD";
-			outputPaths = (
-/Users/lydiayuan/cs6010_FinalProject/xcode/CMakeFiles/ALL_BUILD			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "set -e
-if test \"$CONFIGURATION\" = \"Debug\"; then :
-  cd /Users/lydiayuan/cs6010_FinalProject/xcode
-  echo Build\\ all\\ projects
-fi
-if test \"$CONFIGURATION\" = \"Release\"; then :
-  cd /Users/lydiayuan/cs6010_FinalProject/xcode
-  echo Build\\ all\\ projects
-fi
-if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
-  cd /Users/lydiayuan/cs6010_FinalProject/xcode
-  echo Build\\ all\\ projects
-fi
-if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
-  cd /Users/lydiayuan/cs6010_FinalProject/xcode
-  echo Build\\ all\\ projects
-fi
-";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		10A1F1668CC7497395E17E62 /* Sources */ = {
+		5B1C32C98693432B988779CB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59A3535D1EA042949708EFFC /* /Users/lydiayuan/cs6010_FinalProject/src/main.cpp */,
+				477C50786E6548A2B316F129 /* /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/src/main.cpp */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5ECEF4E9FBBE46C69D1E1215 /* PBXTargetDependency */ = {
+		78743761DDCC4EC2ABA133E2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C5805426E9E44C2DBE38C5E7 /* finalProject */;
-			targetProxy = 949C0A7F447F491BB87078EB /* PBXContainerItemProxy */;
+			target = 7ECF66741B134E3F877EF257 /* ZERO_CHECK */;
+			targetProxy = 0BBFC9E870AE4B44A446106F /* PBXContainerItemProxy */;
 		};
-		639037C7261243EB9B468C86 /* PBXTargetDependency */ = {
+		A089427C2B6D4886BAC36027 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5ABB150F4DDF4163A9935369 /* ZERO_CHECK */;
-			targetProxy = F1FB90304DB9449A9018F441 /* PBXContainerItemProxy */;
+			target = 7ECF66741B134E3F877EF257 /* ZERO_CHECK */;
+			targetProxy = 889188DDBDF642DFA915DC29 /* PBXContainerItemProxy */;
 		};
-		9EC58E51103440D086E5494A /* PBXTargetDependency */ = {
+		C880A266F3164ED8B342D42E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5ABB150F4DDF4163A9935369 /* ZERO_CHECK */;
-			targetProxy = 14DDC66223364830B64E75CC /* PBXContainerItemProxy */;
+			target = 2F94EAD0BE104F4D9B1C2292 /* finalProject */;
+			targetProxy = B24F6B2F64784BCDB5CA63DF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		31CFDB25B02944A095C06F41 /* Debug */ = {
+		1B36AC7817544FAFAC9038C3 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = arm64;
@@ -365,22 +388,128 @@ fi
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ALL_BUILD;
 				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/lydiayuan/cs6010_FinalProject/xcode;
+				SYMROOT = /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		1D48ACCA57F14277911B799E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		24139F6B28364CF49195C814 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode;
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
 			name = Debug;
 		};
-		31FEF87AA9CE4A14AEB85DA7 /* Release */ = {
+		24B79CB03BE141FF9781D605 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = arm64;
 				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk;
-				SYMROOT = /Users/lydiayuan/cs6010_FinalProject/xcode/build;
+				SYMROOT = /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode/build;
+			};
+			name = RelWithDebInfo;
+		};
+		2ABC0516AA144CC99AF4F4E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk;
+				SYMROOT = /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode/build;
+			};
+			name = Debug;
+		};
+		4B6A9FAF4F564EA4A402D261 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		50B4458511EB42BDAE90B867 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
 			};
 			name = Release;
 		};
-		37929B94A0BE4127983BC530 /* MinSizeRel */ = {
+		522C04F861F44EDEAF302A79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk;
+				SYMROOT = /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode/build;
+			};
+			name = Release;
+		};
+		59FBD10160F0415986640CDE /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = arm64;
@@ -400,14 +529,14 @@ fi
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = finalProject;
 				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/lydiayuan/cs6010_FinalProject/xcode;
+				SYMROOT = /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode;
 				SYSTEM_HEADER_SEARCH_PATHS = (/opt/homebrew/include,"$(inherited)");
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
 			name = MinSizeRel;
 		};
-		52E022D5961049CE86A2627B /* Debug */ = {
+		7CFDBBF6BADC4F2A96B53D19 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = arm64;
@@ -427,169 +556,14 @@ fi
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = finalProject;
 				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/lydiayuan/cs6010_FinalProject/xcode;
+				SYMROOT = /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode;
 				SYSTEM_HEADER_SEARCH_PATHS = (/opt/homebrew/include,"$(inherited)");
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
 			name = Debug;
 		};
-		58F47DDAA1BE46ADB608B582 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = arm64;
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = ("","$(inherited)");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/lydiayuan/cs6010_FinalProject/xcode;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Debug;
-		};
-		665BEF9940234119AB0834D9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = arm64;
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = ("","$(inherited)");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/lydiayuan/cs6010_FinalProject/xcode;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = Release;
-		};
-		6F7E9D0D319F4743B9F5962E /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = arm64;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk;
-				SYMROOT = /Users/lydiayuan/cs6010_FinalProject/xcode/build;
-			};
-			name = RelWithDebInfo;
-		};
-		7D461A16BA11418E91F3BE59 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = arm64;
-				COMBINE_HIDPI_IMAGES = YES;
-				EXECUTABLE_PREFIX = "";
-				EXECUTABLE_SUFFIX = "";
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 2;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				LD_RUNPATH_SEARCH_PATHS = (/opt/homebrew/lib,"$(inherited)");
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG '-std=c++17' ";
-				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","/opt/homebrew/lib/libsfml-graphics.2.5.1.dylib","/opt/homebrew/lib/libsfml-window.2.5.1.dylib","/opt/homebrew/lib/libsfml-system.2.5.1.dylib","$(inherited)");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = finalProject;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/lydiayuan/cs6010_FinalProject/xcode;
-				SYSTEM_HEADER_SEARCH_PATHS = (/opt/homebrew/include,"$(inherited)");
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		8AEFF8206FD640689CE40192 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = arm64;
-				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk;
-				SYMROOT = /Users/lydiayuan/cs6010_FinalProject/xcode/build;
-			};
-			name = Debug;
-		};
-		A485A093BEAD42E0B5F39DE7 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = arm64;
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = ("","$(inherited)");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/lydiayuan/cs6010_FinalProject/xcode;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		B8AED3A1B25844B9AFAADD6C /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = arm64;
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = ("","$(inherited)");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/lydiayuan/cs6010_FinalProject/xcode;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		CBEF3F0379944F4F9DF6E975 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = arm64;
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				INSTALL_PATH = "";
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = ("","$(inherited)");
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/lydiayuan/cs6010_FinalProject/xcode;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		D222A988EC6A4608B0FDA7B3 /* Release */ = {
+		7D20DB3598C14E14AD332353 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = arm64;
@@ -609,14 +583,14 @@ fi
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = finalProject;
 				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/lydiayuan/cs6010_FinalProject/xcode;
+				SYMROOT = /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode;
 				SYSTEM_HEADER_SEARCH_PATHS = (/opt/homebrew/include,"$(inherited)");
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
 			name = Release;
 		};
-		DD927B360ED845CBA62D9379 /* RelWithDebInfo */ = {
+		A758A4A9141D44D5BC1E6449 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = arm64;
@@ -632,13 +606,13 @@ fi
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ZERO_CHECK;
 				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/lydiayuan/cs6010_FinalProject/xcode;
+				SYMROOT = /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode;
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
 			name = RelWithDebInfo;
 		};
-		E57C60C03D2A4829B4C2564D /* Release */ = {
+		C030D8F2B83D41B0B1771845 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = arm64;
@@ -654,69 +628,118 @@ fi
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ZERO_CHECK;
 				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/lydiayuan/cs6010_FinalProject/xcode;
+				SYMROOT = /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode;
 				USE_HEADERMAP = NO;
 				WARNING_CFLAGS = ("$(inherited)");
 			};
-			name = Release;
+			name = Debug;
 		};
-		F6527247C88242DC91DFECE5 /* MinSizeRel */ = {
+		D2A79261B01A4FB6BAAA9329 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/opt/homebrew/lib,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG '-std=c++17' ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","/opt/homebrew/lib/libsfml-graphics.2.5.1.dylib","/opt/homebrew/lib/libsfml-window.2.5.1.dylib","/opt/homebrew/lib/libsfml-system.2.5.1.dylib","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = finalProject;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode;
+				SYSTEM_HEADER_SEARCH_PATHS = (/opt/homebrew/include,"$(inherited)");
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		DA62E41C0680464A882FFFC7 /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = arm64;
 				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk;
-				SYMROOT = /Users/lydiayuan/cs6010_FinalProject/xcode/build;
+				SYMROOT = /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode/build;
+			};
+			name = MinSizeRel;
+		};
+		E0C0601B0AEA479182421095 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/rasonhung/MSD/cs6010/FinalProject/myGithubRepo/xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
 			};
 			name = MinSizeRel;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2793B377D18842FEB4E2E34A /* Build configuration list for PBXNativeTarget "finalProject" */ = {
+		8B1B7599E713404EB5DD6F53 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				52E022D5961049CE86A2627B /* Debug */,
-				D222A988EC6A4608B0FDA7B3 /* Release */,
-				37929B94A0BE4127983BC530 /* MinSizeRel */,
-				7D461A16BA11418E91F3BE59 /* RelWithDebInfo */,
+				C030D8F2B83D41B0B1771845 /* Debug */,
+				1D48ACCA57F14277911B799E /* Release */,
+				E0C0601B0AEA479182421095 /* MinSizeRel */,
+				A758A4A9141D44D5BC1E6449 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		81B59BF265A64753B8F9F3DF /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+		92390B93C65C40B68F85708E /* Build configuration list for PBXProject "finalProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				31CFDB25B02944A095C06F41 /* Debug */,
-				665BEF9940234119AB0834D9 /* Release */,
-				CBEF3F0379944F4F9DF6E975 /* MinSizeRel */,
-				B8AED3A1B25844B9AFAADD6C /* RelWithDebInfo */,
+				2ABC0516AA144CC99AF4F4E5 /* Debug */,
+				522C04F861F44EDEAF302A79 /* Release */,
+				DA62E41C0680464A882FFFC7 /* MinSizeRel */,
+				24B79CB03BE141FF9781D605 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		D5162B7841E046369EC9EF41 /* Build configuration list for PBXProject "finalProject" */ = {
+		AE656BE85F2043148545FA74 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8AEFF8206FD640689CE40192 /* Debug */,
-				31FEF87AA9CE4A14AEB85DA7 /* Release */,
-				F6527247C88242DC91DFECE5 /* MinSizeRel */,
-				6F7E9D0D319F4743B9F5962E /* RelWithDebInfo */,
+				24139F6B28364CF49195C814 /* Debug */,
+				50B4458511EB42BDAE90B867 /* Release */,
+				4B6A9FAF4F564EA4A402D261 /* MinSizeRel */,
+				1B36AC7817544FAFAC9038C3 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		E60EDDB692914A11A5EFEAA6 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+		FFB6824B1C874D98ACBEE938 /* Build configuration list for PBXNativeTarget "finalProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				58F47DDAA1BE46ADB608B582 /* Debug */,
-				E57C60C03D2A4829B4C2564D /* Release */,
-				A485A093BEAD42E0B5F39DE7 /* MinSizeRel */,
-				DD927B360ED845CBA62D9379 /* RelWithDebInfo */,
+				7CFDBBF6BADC4F2A96B53D19 /* Debug */,
+				7D20DB3598C14E14AD332353 /* Release */,
+				59FBD10160F0415986640CDE /* MinSizeRel */,
+				D2A79261B01A4FB6BAAA9329 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = F9D4006FC65243C8B20E5149 /* Project object */;
+	rootObject = 274152F0D0F041078F2F1CBC /* Project object */;
 }
