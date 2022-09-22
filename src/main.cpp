@@ -79,6 +79,7 @@ int main()
         }
         window.setMouseCursorGrabbed(true);
         
+        cout<< grid.sumAlive() << endl;
         
         window.display();
     }
