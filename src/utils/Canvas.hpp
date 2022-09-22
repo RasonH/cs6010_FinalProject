@@ -12,13 +12,13 @@
 void resetTheGrid(Grid &Grid);
 State computeRandomState();
 void shuffleCellStates(Grid &grid);
-void setupGrid(sf::RenderWindow &window, const unsigned int sideLength, Grid &grid);
-void drawCell(sf::RenderWindow &window, const unsigned int sideLength, Cell &cell);
-bool isValidClick(const sf::Vector2i &position, const unsigned int windowWidth, const unsigned int windowHeight);
-sf::Vector2i computeIndexPosition(const sf::Vector2i &position, const unsigned int sideLength);
-bool isValidIndexPostion(const sf::Vector2i &position, const int &colSize, const int &rowSize);
-void handleLeftClickCell(sf::RenderWindow &window, Grid &grid, const unsigned int sideLength, const unsigned int windowWidth, const unsigned int windowHeight, const int colSize, const int rowSize);
-void handleRightClickCell(sf::RenderWindow &window, Grid &grid, const unsigned int sideLength, const unsigned int windowWidth, const unsigned int windowHeight, const int colSize, const int rowSize);
+void setupGrid(sf::RenderWindow &window, Grid &grid);
+void drawCell(sf::RenderWindow &window, Cell &cell);
+bool isValidClick(const sf::Vector2i &position);
+sf::Vector2i computeIndexPosition(const sf::Vector2i &position);
+bool isValidIndexPostion(const sf::Vector2i &position);
+void handleLeftClickCell(sf::RenderWindow &window, Grid &grid);
+void handleRightClickCell(sf::RenderWindow &window, Grid &grid);
 
 void resetTheGrid(Grid &grid)
 {
@@ -47,18 +47,18 @@ void shuffleCellStates(Grid &grid)
     }
 }
 
-void setupGrid(sf::RenderWindow &window, const unsigned int sideLength, Grid &grid)
+void setupGrid(sf::RenderWindow &window, Grid &grid)
 {
     for (unsigned int row = 0; row < grid.getRowSize(); row++)
     {
         for (unsigned int col = 0; col < grid.getColSize(); col++)
         {
-            drawCell(window, sideLength, grid.getCell(row, col));
+            drawCell(window, grid.getCell(row, col));
         }
     }
 }
 
-void drawCell(sf::RenderWindow &window, const unsigned int sideLength, Cell &cell)
+void drawCell(sf::RenderWindow &window, Cell &cell)
 {
     sf::RectangleShape shape(sf::Vector2f(sideLength * 0.95, sideLength * 0.95));
     sf::Vector2u position = cell.getPosition();
@@ -73,12 +73,12 @@ void drawCell(sf::RenderWindow &window, const unsigned int sideLength, Cell &cel
     window.draw(shape);
 }
 
-bool isValidClick(const sf::Vector2i &position, const unsigned int windowWidth, const unsigned int windowHeight)
+bool isValidClick(const sf::Vector2i &position)
 {
     return 0 <= position.x && position.x <= windowWidth + 100 && 0 <= position.y && position.y <= windowHeight + 100;
 }
 
-sf::Vector2i computeIndexPosition(const sf::Vector2i &position, const unsigned int sideLength)
+sf::Vector2i computeIndexPosition(const sf::Vector2i &position)
 {
     int rowIndex = (position.y / sideLength) - 1;
     bool isValidRow = (rowIndex + 1) * sideLength <= position.y && position.y <= (rowIndex + 2) * sideLength;
@@ -93,18 +93,18 @@ sf::Vector2i computeIndexPosition(const sf::Vector2i &position, const unsigned i
     return indexPosition;
 }
 
-bool isValidIndexPostion(const sf::Vector2i &position, const int &colSize, const int &rowSize)
+bool isValidIndexPostion(const sf::Vector2i &position)
 {
-    return position.x >= 0 && position.y >= 0 && position.x <= colSize && position.y <= rowSize;
+    return position.x >= 0 && position.y >= 0 && position.x <= (colSize -1) && position.y <= (rowSize - 1);
 }
 
-void handleLeftClickCell(sf::RenderWindow &window, Grid &grid, const unsigned int sideLength, const unsigned int windowWidth, const unsigned int windowHeight, const int colSize, const int rowSize)
+void handleLeftClickCell(sf::RenderWindow &window, Grid &grid)
 {
     sf::Vector2i clickPosition = sf::Mouse::getPosition(window);
-    if (isValidClick(clickPosition, windowWidth, windowHeight))
+    if (isValidClick(clickPosition))
     {
-        sf::Vector2i indexPosition = computeIndexPosition(clickPosition, sideLength);
-        if (isValidIndexPostion(indexPosition, colSize - 1, rowSize - 1))
+        sf::Vector2i indexPosition = computeIndexPosition(clickPosition);
+        if (isValidIndexPostion(indexPosition))
         {
             globalSoundManager.playClickSound();
             std::cout
@@ -114,13 +114,13 @@ void handleLeftClickCell(sf::RenderWindow &window, Grid &grid, const unsigned in
     }
 }
 
-void handleRightClickCell(sf::RenderWindow &window, Grid &grid, const unsigned int sideLength, const unsigned int windowWidth, const unsigned int windowHeight, const int colSize, const int rowSize)
+void handleRightClickCell(sf::RenderWindow &window, Grid &grid)
 {
     sf::Vector2i clickPosition = sf::Mouse::getPosition(window);
-    if (isValidClick(clickPosition, windowWidth, windowHeight))
+    if (isValidClick(clickPosition))
     {
-        sf::Vector2i indexPosition = computeIndexPosition(clickPosition, sideLength);
-        if (isValidIndexPostion(indexPosition, colSize - 1, rowSize - 1))
+        sf::Vector2i indexPosition = computeIndexPosition(clickPosition);
+        if (isValidIndexPostion(indexPosition))
         {
             globalSoundManager.playClickSound();
             std::cout
