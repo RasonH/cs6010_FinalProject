@@ -17,18 +17,15 @@ public:
     Grid(const std::vector<std::vector<State>> &states);
     Grid(const Grid &original);
     Grid &operator=(const Grid &original);
-    
+
     bool getIsPaused(); // get isPaused_ state, preparing for enabling/ disabling some classes to do / or not do certain operations
     int sumAlive();
     void toggleIsPaused();
     void computeNextIteration();
     void computeCellState(unsigned int row, unsigned int col);
     void computeCellFinalState(unsigned int row, unsigned int col);
-//    void toggleCellState(unsigned int row, unsigned int col);
     void setCellState(unsigned int row, unsigned int col, State newState);
-
     unsigned int countLiveNeighbors(unsigned int row, unsigned int col);
-
     Cell &getCell(unsigned int row, unsigned int col);
     const unsigned int getRowSize() const;
     const unsigned int getColSize() const;
@@ -214,17 +211,13 @@ const unsigned int Grid::getColSize() const
     return colSize_;
 }
 
-//void Grid::toggleCellState(unsigned int row, unsigned int col)
-//{
-//    cells_[row][col].toggleState();
-//}
-
 void Grid::setCellState(unsigned int row, unsigned int col, State newState)
 {
     cells_[row][col].setState(newState);
 }
 
-bool Grid::getIsPaused(){
+bool Grid::getIsPaused()
+{
     return isPaused_;
 }
 

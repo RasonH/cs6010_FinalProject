@@ -2,8 +2,13 @@
 #include <string>
 #include <filesystem>
 #include <stddef.h>
+#include <chrono>
 
 const unsigned int frameRateLimit = 15;
+
+using namespace std::chrono_literals;
+std::chrono::milliseconds oneSecond = 1s;
+std::chrono::milliseconds interval = oneSecond / frameRateLimit;
 
 const unsigned int sideLength = 10;
 
