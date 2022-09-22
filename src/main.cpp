@@ -26,6 +26,15 @@ int main()
     auto cancel = std::make_shared<cancel_token_t>(false);
     auto computeNextIterationLambdaFunction = computeNextIterationLambda(grid);
     setInterval(computeNextIterationLambdaFunction, interval, cancel);
+    
+    sf::Font font;
+    if (!font.loadFromFile(getFontPath()))
+    {
+        return EXIT_FAILURE;
+    }
+    sf::Text text;
+    text.setFont(font);
+    text.setPosition(sideLength * (colSize + 2) , sideLength *2);
 
     while (window.isOpen())
     {
@@ -35,7 +44,7 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-
+        
         window.clear(sf::Color::Black);
         
         setupGrid(window, grid);
@@ -77,8 +86,10 @@ int main()
         }
         window.setMouseCursorGrabbed(true);
         
-        cout<< grid.sumAlive() << endl;
+        std::string sumOfCells = to_string(grid.sumAlive());
         
+        text.setString("Current alive cells:\n" + sumOfCells);
+        window.draw(text);
         window.display();
     }
 

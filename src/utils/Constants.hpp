@@ -52,3 +52,9 @@ std::string getClickSoundPath()
 }
 
 const std::string clickSoundPath = getClickSoundPath();
+
+std::string getFontPath()
+{
+    const std::string relativeFontPath = "src/utils/Arial.ttf";
+    return filePrefixPath + relativeFontPath;
+}

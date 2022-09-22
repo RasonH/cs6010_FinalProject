@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <iostream>
+#include <string>
 #include <stdlib.h>
 #include "../components/Cell.hpp"
 #include "../components/Grid.hpp"
@@ -121,3 +122,23 @@ void handleRightClickCell(sf::RenderWindow &window, Grid &grid)
 {
     onClickSetCellState(window, grid, dead);
 }
+
+//sf::Text initText (std::string fontPath){
+//    sf::Font font;
+//    if (!font.loadFromFile(fontPath))
+//    {
+//        std::cout << "load font failed, exit program" << std::endl;
+//        exit(1);
+//    }
+//    sf::Text text;
+//    text.setFont(font);
+//    return text;
+//}
+//
+//void drawDynamicText (sf::RenderWindow &window, sf::Text &text, std::string staticText, int dynamicText, int positionX, int positionY){
+//    std::string intToString = std::to_string(dynamicText);
+//    staticText += intToString;
+//    text.setString(staticText);
+//    text.setPosition(positionX, positionY);
+//    window.draw(text);
+//}
