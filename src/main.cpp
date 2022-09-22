@@ -40,18 +40,18 @@ int main()
 
         window.clear(sf::Color::Black);
         
-        setupGrid(window, sideLength, grid);
+        setupGrid(window, grid);
 
         if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
         {
             std::cout << "click" << endl;
-            handleLeftClickCell(window, grid, sideLength, windowWidth, windowHeight, colSize, rowSize);
+            handleLeftClickCell(window, grid);
         }
         
         if (sf::Mouse::isButtonPressed(sf::Mouse::Right))
         {
             std::cout << "click" << endl;
-            handleRightClickCell(window, grid, sideLength, windowWidth, windowHeight, colSize, rowSize);
+            handleRightClickCell(window, grid);
         }
         
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
