@@ -38,6 +38,8 @@ int main()
     text.setFont(font);
     text.setPosition(sideLength * (colSize + 2) , sideLength *2);
     text.setCharacterSize(30);
+//    text.setOutlineThickness(1);
+//    text.setOutlineColor(sf::Color::White);
 
     while (window.isOpen())
     {
@@ -93,7 +95,7 @@ int main()
         
         text.setString("Current alive cells: "
                        + sumOfCells +
-                       "\n\nkeyboard controls:\nR - Reset the grid to an empty grid\nS - Shuffle the cell states\nP - Pause / restart the cell iteration\nQ - Quit the program\n\nmouse controls:\nLeft click - 'draw', set cell state alive\nRight click - 'erase', set cell state dead");
+                       "\n\nkeyboard controls:\nR - Reset the grid to an empty grid\nS - Shuffle the cell states\nP - Pause / restart the cell iteration\nQ - Quit the program\n\nmouse controls:\nLeft click - \n    'draw', set cell state alive\nRight click - \n    'erase', set cell state dead");
         window.draw(text);
         window.display();
     }
