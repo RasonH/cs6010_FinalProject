@@ -1,9 +1,13 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include <iostream>
 #include <stdlib.h>
+#include <string>
 #include "../components/Cell.hpp"
 #include "../components/Grid.hpp"
+#include "Constants.hpp"
+#include "SoundManager.hpp"
 
 void resetTheGrid(Grid &Grid);
 State computeRandomState();
@@ -12,7 +16,7 @@ void setupGrid(sf::RenderWindow &window, const unsigned int sideLength, Grid &gr
 void drawCell(sf::RenderWindow &window, const unsigned int sideLength, Cell &cell);
 bool isValidClick(const sf::Vector2i &position, const unsigned int windowWidth, const unsigned int windowHeight);
 sf::Vector2i computeIndexPosition(const sf::Vector2i &position, const unsigned int sideLength);
-bool isValidIndexPostion(const sf::Vector2i &position, const int& colSize, const int& rowSize);
+bool isValidIndexPostion(const sf::Vector2i &position, const int &colSize, const int &rowSize);
 void handleClickCell(sf::RenderWindow &window, Grid &grid, const unsigned int sideLength, const unsigned int windowWidth, const unsigned int windowHeight, const int colSize, const int rowSize);
 
 void resetTheGrid(Grid &grid)
@@ -57,7 +61,8 @@ void drawCell(sf::RenderWindow &window, const unsigned int sideLength, Cell &cel
 {
     sf::RectangleShape shape(sf::Vector2f(sideLength * 0.95, sideLength * 0.95));
     sf::Vector2u position = cell.getPosition();
-    int rowPos = sideLength * (position.x + 1); //real position - upleft corner
+    // real position - upleft corner
+    int rowPos = sideLength * (position.x + 1); 
     int colPos = sideLength * (position.y + 1);
 
     shape.setPosition(rowPos, colPos);
@@ -87,9 +92,9 @@ sf::Vector2i computeIndexPosition(const sf::Vector2i &position, const unsigned i
     return indexPosition;
 }
 
-bool isValidIndexPostion(const sf::Vector2i &position, const int& colSize, const int& rowSize)
+bool isValidIndexPostion(const sf::Vector2i &position, const int &colSize, const int &rowSize)
 {
-    return position.x >= 0 && position.y >= 0 && position.x <= colSize && position.y <= rowSize ;
+    return position.x >= 0 && position.y >= 0 && position.x <= colSize && position.y <= rowSize;
 }
 
 void handleClickCell(sf::RenderWindow &window, Grid &grid, const unsigned int sideLength, const unsigned int windowWidth, const unsigned int windowHeight, const int colSize, const int rowSize)
@@ -100,7 +105,9 @@ void handleClickCell(sf::RenderWindow &window, Grid &grid, const unsigned int si
         sf::Vector2i indexPosition = computeIndexPosition(clickPosition, sideLength);
         if (isValidIndexPostion(indexPosition, colSize - 1, rowSize - 1))
         {
-            std::cout << "handle valid cell click" << std::endl;
+            globalSoundManager.playClickSound();
+            std::cout
+                << "handle valid cell click" << std::endl;
             grid.toggleCellState(indexPosition.x, indexPosition.y);
         }
     }
