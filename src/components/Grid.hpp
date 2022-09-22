@@ -232,6 +232,5 @@ int Grid::sumAlive(){
             }
         }
     }
-    std::cout << sum << std::endl;
     return sum;
 }

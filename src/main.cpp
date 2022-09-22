@@ -88,7 +88,9 @@ int main()
         
         std::string sumOfCells = to_string(grid.sumAlive());
         
-        text.setString("Current alive cells:\n" + sumOfCells);
+        text.setString("Current alive cells: "
+                       + sumOfCells +
+                       "\n\nkeyboard controls:\nR - Reset the grid to an empty grid\nS - Shuffle the cell states\nP - Pause / restart the cell iteration\nQ - Quit the program\n\nmouse controls:\nLeft click - 'draw', set cell state alive\nRight click - 'erase', set cell state dead");
         window.draw(text);
         window.display();
     }
