@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.15)
 
 project(finalProject)
 
-add_executable(finalProject src/main.cpp src/components/Cell.hpp src/components/Grid.hpp src/components/Snake.hpp src/utils/Canvas.hpp src/utils/Constants.hpp src/utils/Frame.hpp)
+add_executable(finalProject src/main.cpp src/components/Cell.hpp src/components/Grid.hpp src/utils/Canvas.hpp src/utils/Constants.hpp src/utils/Frame.hpp)
 
 find_package(SFML 2.5 COMPONENTS graphics REQUIRED)
 
