@@ -17,8 +17,9 @@ public:
     Grid(const std::vector<std::vector<State>> &states);
     Grid(const Grid &original);
     Grid &operator=(const Grid &original);
-    // get isPaused_ state, preparing for enabling/ disabling some classes to do / or not do certain operations
-    bool getIsPaused();
+    
+    bool getIsPaused(); // get isPaused_ state, preparing for enabling/ disabling some classes to do / or not do certain operations
+    int sumAlive();
     void toggleIsPaused();
     void computeNextIteration();
     void computeCellState(unsigned int row, unsigned int col);
@@ -218,4 +219,19 @@ void Grid::setCellState(unsigned int row, unsigned int col, State newState)
 bool Grid::getIsPaused()
 {
     return isPaused_;
+}
+
+int Grid::sumAlive(){
+    int sum = 0;
+    for (unsigned row = 0; row < rowSize_; row++)
+    {
+        for (unsigned col = 0; col < colSize_; col++)
+        {
+            if(cells_[row][col].getState() == live){
+                sum++;
+            }
+        }
+    }
+    std::cout << sum << std::endl;
+    return sum;
 }
