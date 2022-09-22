@@ -1,9 +1,11 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "components/Grid.hpp"
+//#include "components/Snake.hpp"
 #include "utils/Canvas.hpp"
 #include "utils/Frame.hpp"
 #include "utils/Constants.hpp"
+
 
 using namespace std;
 
@@ -22,6 +24,18 @@ int main()
     auto cancel = std::make_shared<cancel_token_t>(false);
     auto computeNextIterationLambdaFunction = computeNextIterationLambda(grid);
     setInterval(computeNextIterationLambdaFunction, interval, cancel);
+    
+    sf::Font font;
+    if (!font.loadFromFile(getFontPath()))
+    {
+        return EXIT_FAILURE;
+    }
+    sf::Text text;
+    text.setFont(font);
+    text.setPosition(sideLength * (colSize + 2) , sideLength *2);
+    text.setCharacterSize(30);
+//    text.setOutlineThickness(1);
+//    text.setOutlineColor(sf::Color::White);
 
     sf::Font font;
     if (!font.loadFromFile(fontPath))
@@ -42,7 +56,7 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-
+        
         window.clear(sf::Color::Black);
 
         setupGrid(window, grid);

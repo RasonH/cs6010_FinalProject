@@ -16,7 +16,7 @@ const unsigned int colSize = 150;
 
 const unsigned int rowSize = 100;
 
-const unsigned int windowWidth = sideLength * (colSize + 2) + 550;
+const unsigned int windowWidth = sideLength * (colSize + 2) + 1000;
 
 const unsigned int windowHeight = sideLength * (rowSize + 2);
 
@@ -55,8 +55,9 @@ const std::string clickSoundPath = getClickSoundPath();
 
 std::string getFontPath()
 {
-    const std::string relativeFontPath = "src/utils/Arial.ttf";
+    const std::string relativeFontPath = "src/utils/joystix_monospace.ttf";
     return filePrefixPath + relativeFontPath;
 }
 
 const std::string fontPath = getFontPath();
+
