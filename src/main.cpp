@@ -1,11 +1,9 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "components/Grid.hpp"
-//#include "components/Snake.hpp"
 #include "utils/Canvas.hpp"
 #include "utils/Frame.hpp"
 #include "utils/Constants.hpp"
-
 
 using namespace std;
 
@@ -17,7 +15,7 @@ int main()
 
     grid.computeNextIteration();
 
-    sf::RenderWindow window(sf::VideoMode(windowWidth, windowHeight), "Conway's Game of Life");
+    sf::RenderWindow window(sf::VideoMode(windowWidth, windowHeight), gameTitle);
 
     window.setFramerateLimit(frameRateLimit);
 
@@ -34,7 +32,7 @@ int main()
 
     sf::Text text;
     text.setFont(font);
-    text.setPosition(sideLength * (colSize + 2), sideLength * 2);
+    text.setPosition(textPosition.x, textPosition.y);
 
     while (window.isOpen())
     {
@@ -44,46 +42,12 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-        
+
         window.clear(sf::Color::Black);
 
         setupGrid(window, grid);
 
-        if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
-        {
-            std::cout << "click" << endl;
-            handleLeftClickCell(window, grid);
-        }
-
-        if (sf::Mouse::isButtonPressed(sf::Mouse::Right))
-        {
-            std::cout << "click" << endl;
-            handleRightClickCell(window, grid);
-        }
-
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
-        {
-            std::cout << "reset the grid to an empty grid" << std::endl;
-            resetTheGrid(grid);
-        }
-
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-        {
-            std::cout << "shuffle the cell states" << std::endl;
-            shuffleCellStates(grid);
-        }
-
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::P))
-        {
-            std::cout << "Pause / Restart the cell iteration" << std::endl;
-            grid.toggleIsPaused();
-        }
-
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
-        {
-            std::cout << "Quit the program" << std::endl;
-            break;
-        }
+        handleMouseAndKeyboardOperation(window, grid);
 
         window.setMouseCursorGrabbed(true);
 

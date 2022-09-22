@@ -1,8 +1,10 @@
 #pragma once
 #include <string>
 #include <filesystem>
-#include <stddef.h>
 #include <chrono>
+#include <SFML/Graphics.hpp>
+
+const std::string gameTitle = " Conway's Game of Life";
 
 const unsigned int frameRateLimit = 15;
 
@@ -55,9 +57,11 @@ const std::string clickSoundPath = getClickSoundPath();
 
 std::string getFontPath()
 {
-    const std::string relativeFontPath = "src/utils/joystix_monospace.ttf";
+    // font: Joystix Monospace
+    const std::string relativeFontPath = "src/utils/Font.ttf";
     return filePrefixPath + relativeFontPath;
 }
 
 const std::string fontPath = getFontPath();
 
+const sf::Vector2u textPosition = {sideLength * (colSize + 2), sideLength * 2};

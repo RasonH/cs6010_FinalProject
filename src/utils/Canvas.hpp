@@ -23,6 +23,7 @@ void onClickSetCellState(sf::RenderWindow &window, Grid &grid, State state);
 void handleLeftClickCell(sf::RenderWindow &window, Grid &grid);
 void handleRightClickCell(sf::RenderWindow &window, Grid &grid);
 void renderLiveCellsStatistics(sf::RenderWindow &window, Grid &grid, sf::Text &text);
+void handleMouseAndKeyboardOperation(sf::RenderWindow &window, Grid &grid);
 
 void resetTheGrid(Grid &grid)
 {
@@ -134,7 +135,40 @@ void handleRightClickCell(sf::RenderWindow &window, Grid &grid)
 void renderLiveCellsStatistics(sf::RenderWindow &window, Grid &grid, sf::Text &text)
 {
     std::string liveCellsCount = std::to_string(grid.countLiveCells());
-    text.setString("Current alive cells: " + liveCellsCount +
-                   "\n\nkeyboard controls:\nR - Reset the grid to an empty grid\nS - Shuffle the cell states\nP - Pause / restart the cell iteration\nQ - Quit the program\n\nmouse controls:\nLeft click - \n    'draw', set cell state alive\nRight click - \n    'erase', set cell state dead");
+    text.setString("\n\n\n\n\nCurrent live cells: " + liveCellsCount +
+                   "\n\n\n\nkeyboard controls:\nR - Reset the grid to an empty grid\nS - Shuffle the cell states\nP - Pause / restart the cell iteration\nQ - Quit the program\n\n\n\nmouse controls:\nLeft click - \n    'draw', set cell state as live\nRight click - \n    'erase', set cell state as dead");
     window.draw(text);
+}
+
+void handleMouseAndKeyboardOperation(sf::RenderWindow &window, Grid &grid)
+{
+    if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+    {
+        handleLeftClickCell(window, grid);
+    }
+
+    if (sf::Mouse::isButtonPressed(sf::Mouse::Right))
+    {
+        handleRightClickCell(window, grid);
+    }
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
+    {
+        resetTheGrid(grid);
+    }
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+    {
+        shuffleCellStates(grid);
+    }
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::P))
+    {
+        grid.toggleIsPaused();
+    }
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
+    {
+        window.close();
+    }
 }
