@@ -23,6 +23,17 @@ int main()
     auto computeNextIterationLambdaFunction = computeNextIterationLambda(grid);
     setInterval(computeNextIterationLambdaFunction, interval, cancel);
 
+    sf::Font font;
+    if (!font.loadFromFile(fontPath))
+    {
+        std::cerr << "Failed to load font file." << std::endl;
+        exit(1);
+    }
+
+    sf::Text text;
+    text.setFont(font);
+    text.setPosition(sideLength * (colSize + 2), sideLength * 2);
+
     while (window.isOpen())
     {
         sf::Event event;
@@ -73,6 +84,8 @@ int main()
         }
 
         window.setMouseCursorGrabbed(true);
+
+        renderLiveCellsStatistics(window, grid, text);
 
         window.display();
     }

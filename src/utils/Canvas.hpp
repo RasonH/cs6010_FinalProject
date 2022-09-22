@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <iostream>
+#include <string>
 #include <stdlib.h>
 #include "../components/Cell.hpp"
 #include "../components/Grid.hpp"
@@ -21,6 +22,7 @@ bool isValidIndexPostion(const sf::Vector2i &position);
 void onClickSetCellState(sf::RenderWindow &window, Grid &grid, State state);
 void handleLeftClickCell(sf::RenderWindow &window, Grid &grid);
 void handleRightClickCell(sf::RenderWindow &window, Grid &grid);
+void renderLiveCellsStatistics(sf::RenderWindow &window, Grid &grid, sf::Text &text);
 
 void resetTheGrid(Grid &grid)
 {
@@ -128,3 +130,12 @@ void handleRightClickCell(sf::RenderWindow &window, Grid &grid)
 {
     onClickSetCellState(window, grid, dead);
 }
+
+void renderLiveCellsStatistics(sf::RenderWindow &window, Grid &grid, sf::Text &text)
+{
+    std::string liveCellsCount = std::to_string(grid.countLiveCells());
+    text.setString("Current alive cells: " + liveCellsCount +
+                   "\n\nkeyboard controls:\nR - Reset the grid to an empty grid\nS - Shuffle the cell states\nP - Pause / restart the cell iteration\nQ - Quit the program\n\nmouse controls:\nLeft click - 'draw', set cell state alive\nRight click - 'erase', set cell state dead");
+    window.draw(text);
+}
+
