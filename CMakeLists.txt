@@ -8,6 +8,8 @@ add_executable(finalProject src/main.cpp src/components/Cell.hpp src/components/
 
 find_package(SFML 2.5 COMPONENTS graphics REQUIRED)
 
-target_link_libraries(finalProject sfml-graphics)
+find_package(SFML 2.5 COMPONENTS audio REQUIRED)
+
+target_link_libraries(finalProject sfml-graphics sfml-audio)
 
 target_compile_options(finalProject PUBLIC -std=c++17)
