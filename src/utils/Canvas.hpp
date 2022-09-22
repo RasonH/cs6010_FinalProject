@@ -6,10 +6,12 @@
 #include <stdlib.h>
 #include "../components/Cell.hpp"
 #include "../components/Grid.hpp"
+#include "RandomNumberGenerator.hpp"
 #include "Constants.hpp"
 #include "SoundManager.hpp"
 
 void resetTheGrid(Grid &Grid);
+bool isOdd(unsigned int num);
 State computeRandomState();
 void shuffleCellStates(Grid &grid);
 void setupGrid(sf::RenderWindow &window, Grid &grid);
@@ -20,6 +22,7 @@ bool isValidIndexPostion(const sf::Vector2i &position);
 void onClickSetCellState(sf::RenderWindow &window, Grid &grid, State state);
 void handleLeftClickCell(sf::RenderWindow &window, Grid &grid);
 void handleRightClickCell(sf::RenderWindow &window, Grid &grid);
+void renderLiveCellsStatistics(sf::RenderWindow &window, Grid &grid, sf::Text &text);
 
 void resetTheGrid(Grid &grid)
 {
@@ -32,9 +35,14 @@ void resetTheGrid(Grid &grid)
     }
 }
 
+bool isOdd(unsigned int num)
+{
+    return num & 1;
+}
+
 State computeRandomState()
 {
-    return ((float)rand() / RAND_MAX) > 0.5 ? live : dead;
+    return isOdd(randomNumberGenerator()) ? live : dead;
 }
 
 void shuffleCellStates(Grid &grid)
@@ -123,22 +131,10 @@ void handleRightClickCell(sf::RenderWindow &window, Grid &grid)
     onClickSetCellState(window, grid, dead);
 }
 
-//sf::Text initText (std::string fontPath){
-//    sf::Font font;
-//    if (!font.loadFromFile(fontPath))
-//    {
-//        std::cout << "load font failed, exit program" << std::endl;
-//        exit(1);
-//    }
-//    sf::Text text;
-//    text.setFont(font);
-//    return text;
-//}
-//
-//void drawDynamicText (sf::RenderWindow &window, sf::Text &text, std::string staticText, int dynamicText, int positionX, int positionY){
-//    std::string intToString = std::to_string(dynamicText);
-//    staticText += intToString;
-//    text.setString(staticText);
-//    text.setPosition(positionX, positionY);
-//    window.draw(text);
-//}
+void renderLiveCellsStatistics(sf::RenderWindow &window, Grid &grid, sf::Text &text)
+{
+    std::string liveCellsCount = std::to_string(grid.countLiveCells());
+    text.setString("Current alive cells: " + liveCellsCount +
+                   "\n\nkeyboard controls:\nR - Reset the grid to an empty grid\nS - Shuffle the cell states\nP - Pause / restart the cell iteration\nQ - Quit the program\n\nmouse controls:\nLeft click - \n    'draw', set cell state alive\nRight click - \n    'erase', set cell state dead");
+    window.draw(text);
+}

@@ -55,7 +55,9 @@ const std::string clickSoundPath = getClickSoundPath();
 
 std::string getFontPath()
 {
-    // free pixel type font from: https://www.1001fonts.com/pixel+video-game-fonts.html
     const std::string relativeFontPath = "src/utils/joystix_monospace.ttf";
     return filePrefixPath + relativeFontPath;
 }
+
+const std::string fontPath = getFontPath();
+

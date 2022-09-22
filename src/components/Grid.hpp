@@ -2,6 +2,7 @@
 #include "Cell.hpp"
 #include <vector>
 #include <iostream>
+#include <algorithm>
 
 class Grid
 {
@@ -17,9 +18,9 @@ public:
     Grid(const std::vector<std::vector<State>> &states);
     Grid(const Grid &original);
     Grid &operator=(const Grid &original);
-    
-    bool getIsPaused(); // get isPaused_ state, preparing for enabling/ disabling some classes to do / or not do certain operations
-    int sumAlive();
+    // get isPaused_ state, preparing for enabling/ disabling some classes to do / or not do certain operations
+    bool getIsPaused();
+    unsigned int countLiveCells();
     void toggleIsPaused();
     void computeNextIteration();
     void computeCellState(unsigned int row, unsigned int col);
@@ -221,16 +222,13 @@ bool Grid::getIsPaused()
     return isPaused_;
 }
 
-int Grid::sumAlive(){
-    int sum = 0;
-    for (unsigned row = 0; row < rowSize_; row++)
+unsigned int Grid::countLiveCells()
+{
+    unsigned int count = 0;
+    for (unsigned int row = 0; row < rowSize_; row++)
     {
-        for (unsigned col = 0; col < colSize_; col++)
-        {
-            if(cells_[row][col].getState() == live){
-                sum++;
-            }
-        }
+        count += std::count_if(begin(cells_[row]), end(cells_[row]), [](Cell &cell)
+                               { return cell.isCurrentlyLive(); });
     }
-    return sum;
+    return count;
 }

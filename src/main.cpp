@@ -1,7 +1,5 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include <stdlib.h>
-#include <time.h>
 #include "components/Grid.hpp"
 //#include "components/Snake.hpp"
 #include "utils/Canvas.hpp"
@@ -13,8 +11,6 @@ using namespace std;
 
 int main()
 {
-    srand(time(nullptr));
-
     Grid grid(colSize, rowSize);
 
     shuffleCellStates(grid);
@@ -41,6 +37,17 @@ int main()
 //    text.setOutlineThickness(1);
 //    text.setOutlineColor(sf::Color::White);
 
+    sf::Font font;
+    if (!font.loadFromFile(fontPath))
+    {
+        std::cerr << "Failed to load font file." << std::endl;
+        exit(1);
+    }
+
+    sf::Text text;
+    text.setFont(font);
+    text.setPosition(sideLength * (colSize + 2), sideLength * 2);
+
     while (window.isOpen())
     {
         sf::Event event;
@@ -51,7 +58,7 @@ int main()
         }
         
         window.clear(sf::Color::Black);
-        
+
         setupGrid(window, grid);
 
         if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
@@ -59,13 +66,13 @@ int main()
             std::cout << "click" << endl;
             handleLeftClickCell(window, grid);
         }
-        
+
         if (sf::Mouse::isButtonPressed(sf::Mouse::Right))
         {
             std::cout << "click" << endl;
             handleRightClickCell(window, grid);
         }
-        
+
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
         {
             std::cout << "reset the grid to an empty grid" << std::endl;
@@ -77,26 +84,23 @@ int main()
             std::cout << "shuffle the cell states" << std::endl;
             shuffleCellStates(grid);
         }
-        
+
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::P))
         {
             std::cout << "Pause / Restart the cell iteration" << std::endl;
             grid.toggleIsPaused();
         }
-        
+
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
         {
             std::cout << "Quit the program" << std::endl;
             break;
         }
+
         window.setMouseCursorGrabbed(true);
-        
-        std::string sumOfCells = to_string(grid.sumAlive());
-        
-        text.setString("Current alive cells: "
-                       + sumOfCells +
-                       "\n\nkeyboard controls:\nR - Reset the grid to an empty grid\nS - Shuffle the cell states\nP - Pause / restart the cell iteration\nQ - Quit the program\n\nmouse controls:\nLeft click - \n    'draw', set cell state alive\nRight click - \n    'erase', set cell state dead");
-        window.draw(text);
+
+        renderLiveCellsStatistics(window, grid, text);
+
         window.display();
     }
 
