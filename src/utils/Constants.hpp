@@ -55,6 +55,7 @@ const std::string clickSoundPath = getClickSoundPath();
 
 std::string getFontPath()
 {
-    const std::string relativeFontPath = "src/utils/Arial.ttf";
+    // free pixel type font from: https://www.1001fonts.com/pixel+video-game-fonts.html
+    const std::string relativeFontPath = "src/utils/joystix_monospace.ttf";
     return filePrefixPath + relativeFontPath;
 }

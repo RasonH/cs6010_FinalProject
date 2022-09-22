@@ -3,9 +3,11 @@
 #include <stdlib.h>
 #include <time.h>
 #include "components/Grid.hpp"
+//#include "components/Snake.hpp"
 #include "utils/Canvas.hpp"
 #include "utils/Frame.hpp"
 #include "utils/Constants.hpp"
+
 
 using namespace std;
 
@@ -35,6 +37,7 @@ int main()
     sf::Text text;
     text.setFont(font);
     text.setPosition(sideLength * (colSize + 2) , sideLength *2);
+    text.setCharacterSize(30);
 
     while (window.isOpen())
     {
