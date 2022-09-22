@@ -1,4 +1,4 @@
-# cs6010_FinalProject
+# CS6010 Final Project
 
 ## Group Member
 - Rason Hung
@@ -8,7 +8,9 @@
 
 ### For Xcode dev
 ```shell
+mkdir xcode
 cd xcode
+cmake -G Xcode ..
 open finalProject.xcodeproj
 # open the project in XCode
 ```

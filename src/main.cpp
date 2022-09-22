@@ -24,8 +24,6 @@ int main()
     window.setFramerateLimit(frameRateLimit);
 
     auto cancel = std::make_shared<cancel_token_t>(false);
-    std::chrono::milliseconds oneSecond = 1s;
-    std::chrono::milliseconds interval = oneSecond / frameRateLimit;
     auto computeNextIterationLambdaFunction = computeNextIterationLambda(grid);
     setInterval(computeNextIterationLambdaFunction, interval, cancel);
 

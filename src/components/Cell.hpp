@@ -28,17 +28,12 @@ private:
 public:
     Cell();
     Cell(const sf::Vector2u &initialPosition, State initialState);
-
     State getState() const;
     sf::Vector2u getPosition() const;
-
+    sf::Color getColorByState();
     void setState(State newState);
-//    void toggleState();
-    void printCellInfo();
     bool isCurrentlyLive();
     bool isCurrentlyDead();
-
-    sf::Color getColorByState();
 };
 
 Cell::Cell()
@@ -68,13 +63,6 @@ void Cell::setState(State newState)
     state_ = newState;
 }
 
-void Cell::printCellInfo()
-{
-    std::cout << "Position: " << position_.x << " , " << position_.y << std::endl;
-    std::cout << "State: " << (isCurrentlyLive() ? "currently live" : "currently dead") << std::endl
-              << std::endl;
-}
-
 bool Cell::isCurrentlyDead()
 {
     return currentlyDeadStates.find(state_) != currentlyDeadStates.end();
@@ -84,18 +72,6 @@ bool Cell::isCurrentlyLive()
 {
     return currentlyLiveStates.find(state_) != currentlyLiveStates.end();
 }
-
-//void Cell::toggleState()
-//{
-//    if (isCurrentlyDead())
-//    {
-//        setState(live);
-//    }
-//    else
-//    {
-//        setState(dead);
-//    }
-//}
 
 sf::Color Cell::getColorByState()
 {
