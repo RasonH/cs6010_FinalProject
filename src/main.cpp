@@ -1,7 +1,5 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include <stdlib.h>
-#include <time.h>
 #include "components/Grid.hpp"
 #include "utils/Canvas.hpp"
 #include "utils/Frame.hpp"
@@ -11,8 +9,6 @@ using namespace std;
 
 int main()
 {
-    srand(time(nullptr));
-
     Grid grid(colSize, rowSize);
 
     shuffleCellStates(grid);
@@ -37,7 +33,7 @@ int main()
         }
 
         window.clear(sf::Color::Black);
-        
+
         setupGrid(window, grid);
 
         if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
@@ -45,13 +41,13 @@ int main()
             std::cout << "click" << endl;
             handleLeftClickCell(window, grid);
         }
-        
+
         if (sf::Mouse::isButtonPressed(sf::Mouse::Right))
         {
             std::cout << "click" << endl;
             handleRightClickCell(window, grid);
         }
-        
+
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
         {
             std::cout << "reset the grid to an empty grid" << std::endl;
@@ -63,22 +59,21 @@ int main()
             std::cout << "shuffle the cell states" << std::endl;
             shuffleCellStates(grid);
         }
-        
+
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::P))
         {
             std::cout << "Pause / Restart the cell iteration" << std::endl;
             grid.toggleIsPaused();
         }
-        
+
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
         {
             std::cout << "Quit the program" << std::endl;
             break;
         }
+
         window.setMouseCursorGrabbed(true);
-        
-        cout<< grid.sumAlive() << endl;
-        
+
         window.display();
     }
 

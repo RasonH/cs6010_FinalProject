@@ -5,10 +5,12 @@
 #include <stdlib.h>
 #include "../components/Cell.hpp"
 #include "../components/Grid.hpp"
+#include "RandomNumberGenerator.hpp"
 #include "Constants.hpp"
 #include "SoundManager.hpp"
 
 void resetTheGrid(Grid &Grid);
+bool isOdd(unsigned int num);
 State computeRandomState();
 void shuffleCellStates(Grid &grid);
 void setupGrid(sf::RenderWindow &window, Grid &grid);
@@ -31,9 +33,14 @@ void resetTheGrid(Grid &grid)
     }
 }
 
+bool isOdd(unsigned int num)
+{
+    return num & 1;
+}
+
 State computeRandomState()
 {
-    return ((float)rand() / RAND_MAX) > 0.5 ? live : dead;
+    return isOdd(randomNumberGenerator()) ? live : dead;
 }
 
 void shuffleCellStates(Grid &grid)
