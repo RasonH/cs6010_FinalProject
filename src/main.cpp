@@ -45,9 +45,15 @@ int main()
         if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
         {
             std::cout << "click" << endl;
-            handleClickCell(window, grid, sideLength, windowWidth, windowHeight, colSize, rowSize);
+            handleLeftClickCell(window, grid, sideLength, windowWidth, windowHeight, colSize, rowSize);
         }
-
+        
+        if (sf::Mouse::isButtonPressed(sf::Mouse::Right))
+        {
+            std::cout << "click" << endl;
+            handleRightClickCell(window, grid, sideLength, windowWidth, windowHeight, colSize, rowSize);
+        }
+        
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
         {
             std::cout << "reset the grid to an empty grid" << std::endl;

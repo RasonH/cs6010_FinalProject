@@ -17,7 +17,8 @@ void drawCell(sf::RenderWindow &window, const unsigned int sideLength, Cell &cel
 bool isValidClick(const sf::Vector2i &position, const unsigned int windowWidth, const unsigned int windowHeight);
 sf::Vector2i computeIndexPosition(const sf::Vector2i &position, const unsigned int sideLength);
 bool isValidIndexPostion(const sf::Vector2i &position, const int &colSize, const int &rowSize);
-void handleClickCell(sf::RenderWindow &window, Grid &grid, const unsigned int sideLength, const unsigned int windowWidth, const unsigned int windowHeight, const int colSize, const int rowSize);
+void handleLeftClickCell(sf::RenderWindow &window, Grid &grid, const unsigned int sideLength, const unsigned int windowWidth, const unsigned int windowHeight, const int colSize, const int rowSize);
+void handleRightClickCell(sf::RenderWindow &window, Grid &grid, const unsigned int sideLength, const unsigned int windowWidth, const unsigned int windowHeight, const int colSize, const int rowSize);
 
 void resetTheGrid(Grid &grid)
 {
@@ -97,7 +98,7 @@ bool isValidIndexPostion(const sf::Vector2i &position, const int &colSize, const
     return position.x >= 0 && position.y >= 0 && position.x <= colSize && position.y <= rowSize;
 }
 
-void handleClickCell(sf::RenderWindow &window, Grid &grid, const unsigned int sideLength, const unsigned int windowWidth, const unsigned int windowHeight, const int colSize, const int rowSize)
+void handleLeftClickCell(sf::RenderWindow &window, Grid &grid, const unsigned int sideLength, const unsigned int windowWidth, const unsigned int windowHeight, const int colSize, const int rowSize)
 {
     sf::Vector2i clickPosition = sf::Mouse::getPosition(window);
     if (isValidClick(clickPosition, windowWidth, windowHeight))
@@ -108,7 +109,23 @@ void handleClickCell(sf::RenderWindow &window, Grid &grid, const unsigned int si
             globalSoundManager.playClickSound();
             std::cout
                 << "handle valid cell click" << std::endl;
-            grid.toggleCellState(indexPosition.x, indexPosition.y);
+            grid.setCellState(indexPosition.x, indexPosition.y, live);
+        }
+    }
+}
+
+void handleRightClickCell(sf::RenderWindow &window, Grid &grid, const unsigned int sideLength, const unsigned int windowWidth, const unsigned int windowHeight, const int colSize, const int rowSize)
+{
+    sf::Vector2i clickPosition = sf::Mouse::getPosition(window);
+    if (isValidClick(clickPosition, windowWidth, windowHeight))
+    {
+        sf::Vector2i indexPosition = computeIndexPosition(clickPosition, sideLength);
+        if (isValidIndexPostion(indexPosition, colSize - 1, rowSize - 1))
+        {
+            globalSoundManager.playClickSound();
+            std::cout
+                << "handle valid cell click" << std::endl;
+            grid.setCellState(indexPosition.x, indexPosition.y, dead);
         }
     }
 }

@@ -33,7 +33,7 @@ public:
     sf::Vector2u getPosition() const;
 
     void setState(State newState);
-    void toggleState();
+//    void toggleState();
     void printCellInfo();
     bool isCurrentlyLive();
     bool isCurrentlyDead();
@@ -85,17 +85,17 @@ bool Cell::isCurrentlyLive()
     return currentlyLiveStates.find(state_) != currentlyLiveStates.end();
 }
 
-void Cell::toggleState()
-{
-    if (isCurrentlyDead())
-    {
-        setState(live);
-    }
-    else
-    {
-        setState(dead);
-    }
-}
+//void Cell::toggleState()
+//{
+//    if (isCurrentlyDead())
+//    {
+//        setState(live);
+//    }
+//    else
+//    {
+//        setState(dead);
+//    }
+//}
 
 sf::Color Cell::getColorByState()
 {
