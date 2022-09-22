@@ -24,18 +24,6 @@ int main()
     auto cancel = std::make_shared<cancel_token_t>(false);
     auto computeNextIterationLambdaFunction = computeNextIterationLambda(grid);
     setInterval(computeNextIterationLambdaFunction, interval, cancel);
-    
-    sf::Font font;
-    if (!font.loadFromFile(getFontPath()))
-    {
-        return EXIT_FAILURE;
-    }
-    sf::Text text;
-    text.setFont(font);
-    text.setPosition(sideLength * (colSize + 2) , sideLength *2);
-    text.setCharacterSize(30);
-//    text.setOutlineThickness(1);
-//    text.setOutlineColor(sf::Color::White);
 
     sf::Font font;
     if (!font.loadFromFile(fontPath))
