@@ -23,7 +23,7 @@ void onClickSetCellState(sf::RenderWindow &window, Grid &grid, State state);
 void handleLeftClickCell(sf::RenderWindow &window, Grid &grid);
 void handleRightClickCell(sf::RenderWindow &window, Grid &grid);
 void renderLiveCellsStatistics(sf::RenderWindow &window, Grid &grid, sf::Text &text);
-void handleMouseAndKeyboardOperation(sf::RenderWindow &window, Grid &grid);
+void handleMouseAndKeyboardOperation(sf::RenderWindow &window, Grid &grid, std::shared_ptr<std::atomic_bool> cancelSetIntervalToken);
 
 void resetTheGrid(Grid &grid)
 {
@@ -140,7 +140,7 @@ void renderLiveCellsStatistics(sf::RenderWindow &window, Grid &grid, sf::Text &t
     window.draw(text);
 }
 
-void handleMouseAndKeyboardOperation(sf::RenderWindow &window, Grid &grid)
+void handleMouseAndKeyboardOperation(sf::RenderWindow &window, Grid &grid, std::shared_ptr<std::atomic_bool> cancelSetIntervalToken)
 {
     if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
     {
@@ -169,6 +169,7 @@ void handleMouseAndKeyboardOperation(sf::RenderWindow &window, Grid &grid)
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
     {
+        *cancelSetIntervalToken = true;
         window.close();
     }
 }

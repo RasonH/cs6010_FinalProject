@@ -62,11 +62,13 @@ make
 ```c++
 // main.cpp
 
-setInterval(computeNextIterationLambdaFunction, interval, cancel);
+setInterval(computeNextIterationLambdaFunction, interval, cancelSetIntervalToken);
 ```
 In the `setInterval` function, we blocks the execution of the current thread until specified `sleep_time` ( current time + interval ) has been reached, then we call the function passed into the `setInterval`
 
 It works like the `setInterval` in JavaScript
+
+`cancelSetIntervalToken` is like a switch to break the cycle, without it, the `setInterval` will stop when the function exits
 
 ## Optimization
 
