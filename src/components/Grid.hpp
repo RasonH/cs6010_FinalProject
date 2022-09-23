@@ -3,6 +3,7 @@
 #include <vector>
 #include <iostream>
 #include <algorithm>
+#include <SFML/Graphics.hpp>
 
 class Grid
 {
@@ -30,6 +31,7 @@ public:
     Cell &getCell(unsigned int row, unsigned int col);
     const unsigned int getRowSize() const;
     const unsigned int getColSize() const;
+    bool operator==(const Grid &rhs);
 };
 
 Grid::Grid()
@@ -62,9 +64,11 @@ Grid::Grid(const std::vector<std::vector<State>> &states)
     isPaused_ = false;
     for (unsigned int row = 0; row < rowSize_; row++)
     {
+        cells_.push_back({});
         for (unsigned int col = 0; col < colSize_; col++)
         {
-            cells_[row][col] = Cell({row, col}, states[row][col]);
+            sf::Vector2u position(row, col);
+            cells_[row].push_back(Cell(position, states[row][col]));
         }
     }
 }
@@ -231,4 +235,23 @@ unsigned int Grid::countLiveCells()
                                { return cell.isCurrentlyLive(); });
     }
     return count;
+}
+
+bool Grid::operator==(const Grid &rhs)
+{
+    if (rowSize_ != rhs.rowSize_ || colSize_ != rhs.colSize_)
+    {
+        return false;
+    }
+    for (unsigned int row = 0; row < rowSize_; row++)
+    {
+        for (unsigned int col = 0; col < colSize_; col++)
+        {
+            if (cells_[row][col].getState() != rhs.cells_[row][col].getState())
+            {
+                return false;
+            }
+        }
+    }
+    return true;
 }

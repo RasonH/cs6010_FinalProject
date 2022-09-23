@@ -85,7 +85,7 @@ void drawCell(sf::RenderWindow &window, Cell &cell)
 
 bool isValidClick(const sf::Vector2i &position)
 {
-    return 0 <= position.x && position.x <= windowWidth + 100 && 0 <= position.y && position.y <= windowHeight + 100;
+    return 0 <= position.x && position.x <= windowWidth && 0 <= position.y && position.y <= windowHeight;
 }
 
 sf::Vector2i computeIndexPosition(const sf::Vector2i &position)
