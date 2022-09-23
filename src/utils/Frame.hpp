@@ -6,8 +6,6 @@
 #include <memory>
 #include <atomic>
 
-using cancel_token_t = std::atomic_bool;
-
 // capture reference by reference in a lambda
 // reference: https://stackoverflow.com/a/21443273
 std::function<void()> computeNextIterationLambda(Grid &grid)
@@ -22,7 +20,7 @@ std::function<void()> computeNextIterationLambda(Grid &grid)
 // JavaScript setInterval: https://developer.mozilla.org/en-US/docs/Web/API/setInterval
 // reference: https://stackoverflow.com/a/72226772
 template <typename F>
-void setInterval(F fun, std::chrono::steady_clock::duration interval, std::shared_ptr<cancel_token_t> cancel_token = nullptr)
+void setInterval(F fun, std::chrono::steady_clock::duration interval, std::shared_ptr<std::atomic_bool> cancel_token = nullptr)
 {
   std::thread([fun = std::move(fun), interval, tok = std::move(cancel_token)]()
               { 

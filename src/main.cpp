@@ -19,9 +19,9 @@ int main()
 
     window.setFramerateLimit(frameRateLimit);
 
-    auto cancel = std::make_shared<cancel_token_t>(false);
-    auto computeNextIterationLambdaFunction = computeNextIterationLambda(grid);
-    setInterval(computeNextIterationLambdaFunction, interval, cancel);
+    std::shared_ptr<std::atomic_bool> cancelSetIntervalToken = std::make_shared<std::atomic_bool>(false);
+    std::function<void()> computeNextIterationLambdaFunction = computeNextIterationLambda(grid);
+    setInterval(computeNextIterationLambdaFunction, interval, cancelSetIntervalToken);
 
     sf::Font font;
     if (!font.loadFromFile(fontPath))
@@ -47,7 +47,7 @@ int main()
 
         setupGrid(window, grid);
 
-        handleMouseAndKeyboardOperation(window, grid);
+        handleMouseAndKeyboardOperation(window, grid, cancelSetIntervalToken);
 
         window.setMouseCursorGrabbed(true);
 
