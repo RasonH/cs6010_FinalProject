@@ -3,7 +3,6 @@
 #include <vector>
 #include <iostream>
 #include <algorithm>
-#include <iostream>
 #include <SFML/Graphics.hpp>
 
 class Grid
