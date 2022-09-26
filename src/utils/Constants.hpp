@@ -90,6 +90,7 @@ std::vector<std::string> readPatternToString (std::string filename){
     while(fin >> singleLine){
         allLines.push_back(singleLine);
     }
+    fin.close();
     return allLines;
 }
 
