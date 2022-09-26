@@ -4,11 +4,14 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
+#include <vector>
 #include "../components/Cell.hpp"
 #include "../components/Grid.hpp"
 #include "RandomNumberGenerator.hpp"
 #include "Constants.hpp"
 #include "SoundManager.hpp"
+
+
 
 void resetTheGrid(Grid &Grid);
 bool isOdd(unsigned int num);
@@ -24,6 +27,8 @@ void handleLeftClickCell(sf::RenderWindow &window, Grid &grid);
 void handleRightClickCell(sf::RenderWindow &window, Grid &grid);
 void renderLiveCellsStatistics(sf::RenderWindow &window, Grid &grid, sf::Text &text);
 void handleMouseAndKeyboardOperation(sf::RenderWindow &window, Grid &grid, std::shared_ptr<std::atomic_bool> cancelSetIntervalToken);
+
+void drawPattern (sf::RenderWindow &window, Grid &grid, const std::vector<std::vector<State>>& patternMatrix);
 
 void resetTheGrid(Grid &grid)
 {
@@ -172,4 +177,25 @@ void handleMouseAndKeyboardOperation(sf::RenderWindow &window, Grid &grid, std::
         *cancelSetIntervalToken = true;
         window.close();
     }
+    
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::G))
+    {
+        drawPattern(window, grid, );
+    }
 }
+
+
+void drawPattern(sf::RenderWindow &window, Grid &grid, const std::vector<std::vector<State>> &patternMatrix){
+    sf::Vector2i clickPosition = sf::Mouse::getPosition(window);
+    sf::Vector2i indexPosition = computeIndexPosition(clickPosition);
+    if (isValidClick({(indexPosition.x + (int)patternMatrix[0].size()), (indexPosition.y + (int)patternMatrix.size())}))
+    {
+        for (int row = 0; row < (int)patternMatrix.size(); row++){
+            for (int col = 0; col < (int)patternMatrix[row].size(); col++){
+                grid.setCellState(indexPosition.x + col, indexPosition.y + row, patternMatrix[row][col]);
+            }
+        }
+    }
+}
+
+

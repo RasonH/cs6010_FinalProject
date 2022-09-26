@@ -22,7 +22,7 @@ int main()
     std::shared_ptr<std::atomic_bool> cancelSetIntervalToken = std::make_shared<std::atomic_bool>(false);
     std::function<void()> computeNextIterationLambdaFunction = computeNextIterationLambda(grid);
     setInterval(computeNextIterationLambdaFunction, interval, cancelSetIntervalToken);
-
+    
     sf::Font font;
     if (!font.loadFromFile(fontPath))
     {
@@ -34,6 +34,12 @@ int main()
     text.setFont(font);
     text.setPosition(textPosition.x, textPosition.y);
 
+    
+    
+    
+    
+    
+    
     while (window.isOpen())
     {
         sf::Event event;

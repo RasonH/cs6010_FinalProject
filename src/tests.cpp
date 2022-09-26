@@ -101,4 +101,7 @@ void testGridComponent()
 
     blinkerAfterOneIterationGrid.computeCellState(2, 2);
     assert((blinkerAfterOneIterationGrid.getCell(2, 2).getState() == nextIterationLive) && "The cell should be live in the next iteration");
+
+    
+    
 }
