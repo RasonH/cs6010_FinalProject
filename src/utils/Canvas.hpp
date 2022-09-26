@@ -27,8 +27,8 @@ void handleLeftClickCell(sf::RenderWindow &window, Grid &grid);
 void handleRightClickCell(sf::RenderWindow &window, Grid &grid);
 void renderLiveCellsStatistics(sf::RenderWindow &window, Grid &grid, sf::Text &text);
 void handleMouseAndKeyboardOperation(sf::RenderWindow &window, Grid &grid, std::shared_ptr<std::atomic_bool> cancelSetIntervalToken);
-
 void drawPattern (sf::RenderWindow &window, Grid &grid, const std::vector<std::vector<State>>& patternMatrix);
+
 
 void resetTheGrid(Grid &grid)
 {
@@ -141,7 +141,7 @@ void renderLiveCellsStatistics(sf::RenderWindow &window, Grid &grid, sf::Text &t
 {
     std::string liveCellsCount = std::to_string(grid.countLiveCells());
     text.setString("\n\n\n\n\nCurrent live cells: " + liveCellsCount +
-                   "\n\n\n\nkeyboard controls:\nR - Reset the grid to an empty grid\nS - Shuffle the cell states\nP - Pause / restart the cell iteration\nQ - Quit the program\n\n\n\nmouse controls:\nLeft click - \n    'draw', set cell state as live\nRight click - \n    'erase', set cell state as dead");
+                   "\n\n\n\nkeyboard controls:\nR - Reset the grid to an empty grid\nS - Shuffle the cell states\nP - Pause / restart the cell iteration\nQ - Quit the program\nG - draw a Gosper glider gun\n\n\n\nmouse controls:\nLeft click - \n    'draw', set cell state as live\nRight click - \n    'erase', set cell state as dead");
     window.draw(text);
 }
 
@@ -180,7 +180,7 @@ void handleMouseAndKeyboardOperation(sf::RenderWindow &window, Grid &grid, std::
     
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::G))
     {
-        drawPattern(window, grid, );
+        drawPattern(window, grid, patternMatrix);
     }
 }
 
@@ -188,10 +188,18 @@ void handleMouseAndKeyboardOperation(sf::RenderWindow &window, Grid &grid, std::
 void drawPattern(sf::RenderWindow &window, Grid &grid, const std::vector<std::vector<State>> &patternMatrix){
     sf::Vector2i clickPosition = sf::Mouse::getPosition(window);
     sf::Vector2i indexPosition = computeIndexPosition(clickPosition);
-    if (isValidClick({(indexPosition.x + (int)patternMatrix[0].size()), (indexPosition.y + (int)patternMatrix.size())}))
+    if (isValidClick({indexPosition.x, indexPosition.y}) && (patternMatrix.size() != 0))
     {
-        for (int row = 0; row < (int)patternMatrix.size(); row++){
-            for (int col = 0; col < (int)patternMatrix[row].size(); col++){
+        int rowMax = (int)patternMatrix.size();
+        if (indexPosition.y + (int)patternMatrix.size() > rowSize){
+            rowMax = rowSize - indexPosition.y;
+        }
+        int colMax = (int)patternMatrix[0].size();
+        if (indexPosition.x + (int)patternMatrix[0].size() > colSize){
+            colMax = colSize - indexPosition.x;
+        }
+        for (int row = 0; row < rowMax ; row++){
+            for (int col = 0; col < colMax; col++){
                 grid.setCellState(indexPosition.x + col, indexPosition.y + row, patternMatrix[row][col]);
             }
         }

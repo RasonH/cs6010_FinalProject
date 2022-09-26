@@ -35,11 +35,6 @@ int main()
     text.setPosition(textPosition.x, textPosition.y);
 
     
-    
-    
-    
-    
-    
     while (window.isOpen())
     {
         sf::Event event;

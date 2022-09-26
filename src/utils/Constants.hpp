@@ -14,7 +14,7 @@ using namespace std::chrono_literals;
 std::chrono::milliseconds oneSecond = 1s;
 std::chrono::milliseconds interval = oneSecond / frameRateLimit;
 
-const unsigned int sideLength = 10;
+const unsigned int sideLength = 12;
 
 const unsigned int colSize = 150;
 
@@ -79,7 +79,7 @@ std::string getPatternPath()
 
 const std::string patternPath = getPatternPath();
 
-std::vector<std::string> readPattern (std::string filename){
+std::vector<std::string> readPatternToString (std::string filename){
     std::ifstream fin(filename);
     if(!fin.is_open()){
         std::cout << "File open failed, exit program" << std::endl;
@@ -93,8 +93,10 @@ std::vector<std::string> readPattern (std::string filename){
     return allLines;
 }
 
-std::vector<std::vector<State>> patternToMatrix (const std::vector<std::string> &inputPattern){
-    std::vector<std::vector<State>> matrix;
+const std::vector<std::string> patternMatrixInString = readPatternToString(patternPath);
+
+std::vector<std::vector<State>> patternMatrixInStringToMatrix (const std::vector<std::string> &inputPattern){
+    std::vector<std::vector<State>> matrix(inputPattern.size(),std::vector<State>(inputPattern[0].size()));
     for (int row = 0; row < (int)inputPattern.size(); row++){
         for (int col = 0; col < (int)inputPattern[row].size(); col++){
             if(inputPattern[row][col] == 'O'){
@@ -105,6 +107,6 @@ std::vector<std::vector<State>> patternToMatrix (const std::vector<std::string> 
         }
     }
     return matrix;
+}
 
-
-const std::vector<std::vector<State>> patternMatrix = patternToMatrix((readPattern(patternPath)));
+const std::vector<std::vector<State>> patternMatrix = patternMatrixInStringToMatrix(patternMatrixInString);
