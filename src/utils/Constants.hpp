@@ -68,9 +68,6 @@ const std::string fontPath = getFontPath();
 
 const sf::Vector2u textPosition = {sideLength * (colSize + 2), sideLength * 2};
 
-
-
-
 std::string getPatternPath()
 {
     const std::string relativeFontPath = "src/utils/pattern.txt";

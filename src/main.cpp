@@ -33,7 +33,6 @@ int main()
     sf::Text text;
     text.setFont(font);
     text.setPosition(textPosition.x, textPosition.y);
-
     
     while (window.isOpen())
     {

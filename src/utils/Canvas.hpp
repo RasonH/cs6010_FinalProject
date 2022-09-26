@@ -11,8 +11,6 @@
 #include "Constants.hpp"
 #include "SoundManager.hpp"
 
-
-
 void resetTheGrid(Grid &Grid);
 bool isOdd(unsigned int num);
 State computeRandomState();
@@ -145,6 +143,27 @@ void renderLiveCellsStatistics(sf::RenderWindow &window, Grid &grid, sf::Text &t
     window.draw(text);
 }
 
+void drawPattern(sf::RenderWindow &window, Grid &grid, const std::vector<std::vector<State>> &patternMatrix){
+    sf::Vector2i clickPosition = sf::Mouse::getPosition(window);
+    sf::Vector2i indexPosition = computeIndexPosition(clickPosition);
+    if (isValidClick({indexPosition.x, indexPosition.y}) && (patternMatrix.size() != 0))
+    {
+        int rowMax = (int)patternMatrix.size();
+        if (indexPosition.y + (int)patternMatrix.size() > rowSize){
+            rowMax = rowSize - indexPosition.y;
+        }
+        int colMax = (int)patternMatrix[0].size();
+        if (indexPosition.x + (int)patternMatrix[0].size() > colSize){
+            colMax = colSize - indexPosition.x;
+        }
+        for (int row = 0; row < rowMax ; row++){
+            for (int col = 0; col < colMax; col++){
+                grid.setCellState(indexPosition.x + col, indexPosition.y + row, patternMatrix[row][col]);
+            }
+        }
+    }
+}
+
 void handleMouseAndKeyboardOperation(sf::RenderWindow &window, Grid &grid, std::shared_ptr<std::atomic_bool> cancelSetIntervalToken)
 {
     if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
@@ -183,27 +202,3 @@ void handleMouseAndKeyboardOperation(sf::RenderWindow &window, Grid &grid, std::
         drawPattern(window, grid, patternMatrix);
     }
 }
-
-
-void drawPattern(sf::RenderWindow &window, Grid &grid, const std::vector<std::vector<State>> &patternMatrix){
-    sf::Vector2i clickPosition = sf::Mouse::getPosition(window);
-    sf::Vector2i indexPosition = computeIndexPosition(clickPosition);
-    if (isValidClick({indexPosition.x, indexPosition.y}) && (patternMatrix.size() != 0))
-    {
-        int rowMax = (int)patternMatrix.size();
-        if (indexPosition.y + (int)patternMatrix.size() > rowSize){
-            rowMax = rowSize - indexPosition.y;
-        }
-        int colMax = (int)patternMatrix[0].size();
-        if (indexPosition.x + (int)patternMatrix[0].size() > colSize){
-            colMax = colSize - indexPosition.x;
-        }
-        for (int row = 0; row < rowMax ; row++){
-            for (int col = 0; col < colMax; col++){
-                grid.setCellState(indexPosition.x + col, indexPosition.y + row, patternMatrix[row][col]);
-            }
-        }
-    }
-}
-
-
