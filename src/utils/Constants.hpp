@@ -3,6 +3,8 @@
 #include <filesystem>
 #include <chrono>
 #include <SFML/Graphics.hpp>
+#include <fstream>
+#include <vector>
 
 const std::string gameTitle = " Conway's Game of Life";
 
@@ -12,7 +14,7 @@ using namespace std::chrono_literals;
 std::chrono::milliseconds oneSecond = 1s;
 std::chrono::milliseconds interval = oneSecond / frameRateLimit;
 
-const unsigned int sideLength = 10;
+const unsigned int sideLength = 12;
 
 const unsigned int colSize = 150;
 
@@ -65,3 +67,44 @@ std::string getFontPath()
 const std::string fontPath = getFontPath();
 
 const sf::Vector2u textPosition = {sideLength * (colSize + 2), sideLength * 2};
+
+std::string getPatternPath()
+{
+    const std::string relativeFontPath = "src/utils/pattern.txt";
+    return filePrefixPath + relativeFontPath;
+}
+
+const std::string patternPath = getPatternPath();
+
+std::vector<std::string> readPatternToString (std::string filename){
+    std::ifstream fin(filename);
+    if(!fin.is_open()){
+        std::cout << "File open failed, exit program" << std::endl;
+        exit(1);
+    }
+    std::string singleLine;
+    std::vector<std::string> allLines = {};
+    while(fin >> singleLine){
+        allLines.push_back(singleLine);
+    }
+    fin.close();
+    return allLines;
+}
+
+const std::vector<std::string> patternMatrixInString = readPatternToString(patternPath);
+
+std::vector<std::vector<State>> patternMatrixInStringToMatrix (const std::vector<std::string> &inputPattern){
+    std::vector<std::vector<State>> matrix(inputPattern.size(),std::vector<State>(inputPattern[0].size()));
+    for (int row = 0; row < (int)inputPattern.size(); row++){
+        for (int col = 0; col < (int)inputPattern[row].size(); col++){
+            if(inputPattern[row][col] == 'O'){
+                matrix[row][col] = live;
+            }else{
+                matrix[row][col] = dead;
+            }
+        }
+    }
+    return matrix;
+}
+
+const std::vector<std::vector<State>> patternMatrix = patternMatrixInStringToMatrix(patternMatrixInString);
